@@ -1,10 +1,10 @@
-# PojavLauncher-Beta-Zink
+# PojavLauncher-Experimental-Edition
 基于Boardwalk的Java版Android启动器
 Click to switch to <a href="/README.md">English</a>
 ## 介绍
-* 该Beta版将会与Pojav团队主要分支[v3_openjdk](https://github.com/PojavLauncherTeam/PojavLauncher/tree/v3_openjdk)更新进度保持一致
+* 该存储库Fork自[PojavLauncherTeam:PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher)
 
-* 在新Mesa版本的zink渲染器合并至[v3_openjdk](https://github.com/PojavLauncherTeam/PojavLauncher/tree/v3_openjdk)之前会一直保持更新
+* 该Beta版将会与Pojav团队主要分支[v3_openjdk](https://github.com/PojavLauncherTeam/PojavLauncher/tree/v3_openjdk)更新进度保持一致
 
 * 添加了vgpu渲染器,vgpu1.4.0 OpenGL4.4
 
