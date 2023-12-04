@@ -31,6 +31,7 @@
 #include "ctxbridges/gl_bridge.h"
 #include "ctxbridges/bridge_tbl.h"
 #include "ctxbridges/osm_bridge.h"
+#include "ctxbridges/renderer_config.h"
 
 #define GLFW_CLIENT_API 0x22001
 /* Consider GLFW_NO_API as Vulkan API */
@@ -62,13 +63,6 @@ struct PotatoBridge potatoBridge;
 int (*vtest_main_p) (int argc, char** argv);
 void (*vtest_swap_buffers_p) (void);
 void bigcore_set_affinity();
-
-#define RENDERER_GL4ES 1
-#define RENDERER_VK_ZINK 2
-#define RENDERER_VIRGL 3
-#define RENDERER_VULKAN 4
-#define RENDERER_VK_WARLIP 5
-#define RENDERER_VK_ZINK_PREF 6
 
 void* egl_make_current(void* window);
 
@@ -119,7 +113,9 @@ don't touch the code here
 EXTERNAL_API void* pojavGetCurrentContext() {
     if(pojav_environ->config_renderer == RENDERER_VK_ZINK || pojav_environ->config_renderer == RENDERER_GL4ES) {
         return br_get_current();
-    } else if(pojav_environ->config_renderer == RENDERER_VK_WARLIP || pojav_environ->config_renderer == RENDERER_VK_ZINK_PREF || pojav_environ->config_renderer == RENDERER_VIRGL) {
+    } else if(pojav_environ->config_renderer == RENDERER_VK_WARLIP
+        || pojav_environ->config_renderer == RENDERER_VK_ZINK_PREF
+        || pojav_environ->config_renderer == RENDERER_VIRGL) {
         return (void *)OSMesaGetCurrentContext_p();
     }
 }
@@ -258,7 +254,7 @@ int pojavInitOpenGL() {
         pojav_environ->force_vsync = true;
 
     // NOTE: Override for now.
-    const char *renderer = getenv("POJAV_RENDERER");
+    const char *renderer = getenv("POJAV_BETA_RENDERER");
     if (strncmp("opengles3_virgl", renderer, 15) == 0) {
         pojav_environ->config_renderer = RENDERER_VIRGL;
         setenv("GALLIUM_DRIVER","virpipe",1);
@@ -386,7 +382,9 @@ int pojavInitOpenGL() {
         usleep(100*1000); // need enough time for the server to init
     }
 
-    if (pojav_environ->config_renderer == RENDERER_VK_WARLIP || pojav_environ->config_renderer == RENDERER_VK_ZINK_PREF || pojav_environ->config_renderer == RENDERER_VIRGL) {
+    if (pojav_environ->config_renderer == RENDERER_VK_WARLIP
+        || pojav_environ->config_renderer == RENDERER_VK_ZINK_PREF
+        || pojav_environ->config_renderer == RENDERER_VIRGL) {
         if(OSMesaCreateContext_p == NULL) {
             printf("OSMDroid: %s\n",dlerror());
             return 0;
@@ -512,7 +510,9 @@ EXTERNAL_API void* pojavCreateContext(void* contextSrc) {
 
     if (pojav_environ->config_renderer == RENDERER_VK_ZINK || pojav_environ->config_renderer == RENDERER_GL4ES) {
         return br_init_context((basic_render_window_t*)contextSrc);
-    } else if (pojav_environ->config_renderer == RENDERER_VK_WARLIP || pojav_environ->config_renderer == RENDERER_VK_ZINK_PREF || pojav_environ->config_renderer == RENDERER_VIRGL) {
+    } else if (pojav_environ->config_renderer == RENDERER_VK_WARLIP
+        || pojav_environ->config_renderer == RENDERER_VK_ZINK_PREF
+        || pojav_environ->config_renderer == RENDERER_VIRGL) {
         pojavInitOpenGL();
         printf("OSMDroid: generating context\n");
         void* ctx = OSMesaCreateContext_p(OSMESA_RGBA,contextSrc);
