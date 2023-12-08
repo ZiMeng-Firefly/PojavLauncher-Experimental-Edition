@@ -1,6 +1,8 @@
 # PojavLauncher-Experimental-Edition
 基于Boardwalk的Java版Android启动器
 Click to switch to <a href="/README.md">English</a>
+
+[Pojav Beta·Zink](https://github.com/Vera-Firefly/PojavLauncher-Beta-Zink) Mesa渲染器实验版
 ## 介绍
 * 该存储库Fork自[PojavLauncherTeam:PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher)
 
