@@ -193,6 +193,19 @@ public class JREUtils {
             envMap.put("POJAV_VSYNC_IN_ZINK", "1");
         if(PREF_ZINK_CRASH_HANDLE)
             envMap.put("POJAV_ZINK_CRASH_HANDLE", "1");
+        if(PREF_EXP_SETUP)
+            envMap.put("POJAV_EXP_SETUP", "1");
+        if(PREF_EXP_SETUP_DEFAULT)
+            envMap.put("POJAV_EXP_SETUP_DEFAULT", "1");
+        if(PREF_EXP_SETUP_S)
+            envMap.put("POJAV_EXP_SETUP_S", "1");
+        if(PREF_EXP_SETUP_LW)
+            envMap.put("POJAV_EXP_SETUP_LW", "1");
+        if(PREF_EXP_SETUP_VIRGL)
+            envMap.put("POJAV_EXP_SETUP_VIRGL", "1");
+        if(PREF_EXP_SETUP_PAN)
+            envMap.put("POJAV_EXP_SETUP_PAN", "1");
+        
 
 
         // The OPEN GL version is changed according
@@ -201,21 +214,46 @@ public class JREUtils {
         envMap.put("FORCE_VSYNC", String.valueOf(LauncherPreferences.PREF_FORCE_VSYNC));
 
         envMap.put("MESA_GLSL_CACHE_DIR", Tools.DIR_CACHE.getAbsolutePath());
+
         if (LOCAL_RENDERER != null) {
+            envMap.put("POJAV_BETA_RENDERER", LOCAL_RENDERER);
             if(LOCAL_RENDERER.equals("vulkan_zink")){
-                envMap.put("MESA_GL_VERSION_OVERRIDE", "4.6");
-                envMap.put("MESA_GLSL_VERSION_OVERRIDE", "460");
-            }else if(LOCAL_RENDERER.equals("opengles3_virgl")){
-                envMap.put("MESA_GL_VERSION_OVERRIDE", "4.3");
-                envMap.put("MESA_GLSL_VERSION_OVERRIDE", "430");
-            }else if(LOCAL_RENDERER.equals("vulkan_warlip")){
-                envMap.put("MESA_GL_VERSION_OVERRIDE", "4.6");
-                envMap.put("MESA_GLSL_VERSION_OVERRIDE", "460");
-            }else if(LOCAL_RENDERER.equals("malihw_panfrost")){
-                envMap.put("MESA_GL_VERSION_OVERRIDE", "3.3");
-                envMap.put("MESA_GLSL_VERSION_OVERRIDE", "330");
+                if(PREF_EXP_SETUP){
+                    if(PREF_EXP_SETUP_DEFAULT){
+                        envMap.put("MESA_GL_VERSION_OVERRIDE", "4.6");
+                        envMap.put("MESA_GLSL_VERSION_OVERRIDE", "460");
+                    }
+                    if(PREF_EXP_SETUP_S){
+                        envMap.put("MESA_GL_VERSION_OVERRIDE", "4.6");
+                        envMap.put("MESA_GLSL_VERSION_OVERRIDE", "460");
+                    }
+                    if(PREF_EXP_SETUP_VIRGL){
+                        envMap.put("MESA_GL_VERSION_OVERRIDE", "4.3");
+                        envMap.put("MESA_GLSL_VERSION_OVERRIDE", "430");
+                    }
+                    if(PREF_EXP_SETUP_LW){
+                        envMap.put("MESA_GL_VERSION_OVERRIDE", "4.6");
+                        envMap.put("MESA_GLSL_VERSION_OVERRIDE", "460");
+                    }
+                    if(PREF_EXP_SETUP_PAN){
+                        envMap.put("MESA_GL_VERSION_OVERRIDE", "3.3");
+                        envMap.put("MESA_GLSL_VERSION_OVERRIDE", "330");
+                        envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
+                        //envMap.put("MESA_SHADER_CACHE_DISABLE", "true");
+                        envMap.put("MESA_DISK_CACHE_SINGLE_FILE", "1");
+                        envMap.put("MESA_DISK_CACHE_SINGLE_FILE", "true");
+                    }
+                } else {
+                    envMap.put("MESA_GL_VERSION_OVERRIDE", "4.6");
+                    envMap.put("MESA_GLSL_VERSION_OVERRIDE", "460");
+                }
+            }
+            if(LOCAL_RENDERER.equals("opengles3_desktopgl_angle_vulkan")) {
+                envMap.put("LIBGL_ES", "3");
+                envMap.put("POJAVEXEC_EGL","libEGL_angle.so"); // Use ANGLE EGL
             }
         }
+
         envMap.put("force_glsl_extensions_warn", "true");
         envMap.put("allow_higher_compat_version", "true");
         envMap.put("allow_glsl_extension_directive_midshader", "true");
@@ -228,22 +266,6 @@ public class JREUtils {
             envMap.put("PATH", FFmpegPlugin.libraryPath+":"+envMap.get("PATH"));
         }
 
-        envMap.put("REGAL_GL_VENDOR", "Android");
-        envMap.put("REGAL_GL_RENDERER", "Regal");
-        envMap.put("REGAL_GL_VERSION", "4.5");
-        if(LOCAL_RENDERER != null) {
-            envMap.put("POJAV_BETA_RENDERER", LOCAL_RENDERER);
-            if(LOCAL_RENDERER.equals("opengles3_desktopgl_angle_vulkan")) {
-                envMap.put("LIBGL_ES", "3");
-                envMap.put("POJAVEXEC_EGL","libEGL_angle.so"); // Use ANGLE EGL
-            }
-            if(LOCAL_RENDERER.equals("malihw_panfrost")) {
-                envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
-                //envMap.put("MESA_SHADER_CACHE_DISABLE", "true");
-                envMap.put("MESA_DISK_CACHE_SINGLE_FILE", "1");
-                envMap.put("MESA_DISK_CACHE_SINGLE_FILE", "true");
-            }
-        }
         if(LauncherPreferences.PREF_BIG_CORE_AFFINITY) envMap.put("POJAV_BIG_CORE_AFFINITY", "1");
         envMap.put("AWTSTUB_WIDTH", Integer.toString(CallbackBridge.windowWidth > 0 ? CallbackBridge.windowWidth : CallbackBridge.physicalWidth));
         envMap.put("AWTSTUB_HEIGHT", Integer.toString(CallbackBridge.windowHeight > 0 ? CallbackBridge.windowHeight : CallbackBridge.physicalHeight));
@@ -470,34 +492,62 @@ public class JREUtils {
     public static String loadGraphicsLibrary(){
         if(LOCAL_RENDERER == null) return null;
         String renderLibrary;
-        switch (LOCAL_RENDERER){
-            case "opengles2":
-            case "opengles2_5":
-            case "opengles3":
-                renderLibrary = "libgl4es_114.so";
-                break;
-            case "opengles2_vgpu":
-                renderLibrary = "libvgpu.so";
-                break;
-            case "opengles3_virgl":
-                renderLibrary = "libOSMesa_81.so";
-                break;
-            case "vulkan_zink":
-                renderLibrary = "libOSMesa_8.so";
-                break;
-            case "vulkan_warlip":
-                renderLibrary = "libOSMesa_82.so";
-                break;
-            case "malihw_panfrost":
-                renderLibrary = "libOSMesa_pan.so";
-                break;
-            case "opengles3_desktopgl_angle_vulkan":
-                renderLibrary = "libtinywrapper.so";
-                break;
-            default:
-                Log.w("RENDER_LIBRARY", "No renderer selected, defaulting to opengles2");
-                renderLibrary = "libgl4es_114.so";
-                break;
+        if(PREF_EXP_SETUP){
+            switch (LOCAL_RENDERER){
+                case "opengles2":
+                case "opengles2_5":
+                case "opengles3":
+                    renderLibrary = "libgl4es_114.so";
+                    break;
+                case "opengles2_vgpu":
+                    renderLibrary = "libvgpu.so";
+                    break;
+                case "opengles3_desktopgl_angle_vulkan":
+                    renderLibrary = "libtinywrapper.so";
+                    break;
+                default:
+                    Log.w("RENDER_LIBRARY", "No renderer selected, defaulting to opengles2");
+                    renderLibrary = "libgl4es_114.so";
+                    break;
+            }
+            if(LOCAL_RENDERER.equals("vulkan_zink")){
+                if(PREF_EXP_SETUP_DEFAULT){
+                    renderLibrary = "libOSMesa_8.so";
+                }
+                if(PREF_EXP_SETUP_VIRGL){
+                    renderLibrary = "libOSMesa_81.so";
+                }
+                if(PREF_EXP_SETUP_LW){
+                    renderLibrary = "libOSMesa_82.so";
+                }
+                if(PREF_EXP_SETUP_PAN){
+                    renderLibrary = "libOSMesa_pan.so";
+                }
+                if(PREF_EXP_SETUP_S){
+                    renderLibrary = "libOSMesa.so";
+                }
+            }
+        } else {
+            switch (LOCAL_RENDERER){
+                case "opengles2":
+                case "opengles2_5":
+                case "opengles3":
+                    renderLibrary = "libgl4es_114.so";
+                    break;
+                case "opengles2_vgpu":
+                    renderLibrary = "libvgpu.so";
+                    break;
+                case "vulkan_zink":
+                    renderLibrary = "libOSMesa_8.so";
+                    break;
+                case "opengles3_desktopgl_angle_vulkan":
+                    renderLibrary = "libtinywrapper.so";
+                    break;
+                default:
+                    Log.w("RENDER_LIBRARY", "No renderer selected, defaulting to opengles2");
+                    renderLibrary = "libgl4es_114.so";
+                    break;
+            }
         }
 
         if (!dlopen(renderLibrary) && !dlopen(findInLdLibPath(renderLibrary))) {

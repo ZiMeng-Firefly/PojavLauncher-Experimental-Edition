@@ -22,12 +22,12 @@
     <!-- Toast messages -->
     <string name="toast_permission_denied">需要儲存寫入權限！</string>
     <string name="toast_optifine_success">安裝成功</string>
-<!--
+    <!--
     <string name="toast_3">Exit</string>
     -->
     <!-- MCLauncherActivity: Tabs -->
     <string name="mcl_tab_wiki">Github</string>
-<!-- MCLauncherActivity: Account status -->
+    <!-- MCLauncherActivity: Account status -->
     <!-- MCLauncherActivity: Strings -->
     <string name="mcl_launch_cleancache">正在清理快取</string>
     <string name="mcl_launch_downloading">正在下載 %s</string>
@@ -51,9 +51,9 @@
     <string name="mcl_setting_subtitle_javaargs">註意，非專業人士修改此值可能導致遊戲崩潰</string>
     <string name="mcl_setting_category_renderer">渲染器</string>
     <string name="mcl_setting_renderer_gles2_4">Holy GL4ES -（全版本可用，速度較快）</string>
-    <string name="mcl_setting_renderer_vulkan_zink">Zink Mesa23.2.0（Vulkan）-（全版本可用、速度中等）</string>
+    <string name="mcl_setting_renderer_vulkan_zink">Mesa(Vulkan)</string>
     <string name="mcl_setting_renderer_angle">ANGLE（Vulkan）-（僅 1.17 以上、速度中等）</string>
-<string name="mcl_setting_renderer_panfrost">Panfrost (Mali) - (全版本可用, 速度中等)</string>
+    <string name="mcl_setting_renderer_panfrost">Panfrost (Mali) - (全版本可用, 速度中等)</string>
     <string name="mcl_setting_veroption_release">正式版</string>
     <string name="mcl_setting_veroption_snapshot">快照</string>
     <string name="mcl_setting_veroption_oldalpha">遠古 alpha 版</string>
@@ -108,10 +108,10 @@
     <string name="import_control_verifying_file">檔案正在校檢中，請稍後重試…</string>
     <string name="import_control_invalid_name">名稱無效或檔案已存在</string>
     <string name="import_control_done">導入完成</string>
-<!--
+    <!--
     <string name="control_more3"></string>
     <string name="control_more4"></string>
--->
+    -->
     <string name="customctrl_toggle">可切換</string>
     <string name="customctrl_size">大小</string>
     <string name="customctrl_mapping">對映</string>
@@ -363,4 +363,15 @@
     <string name="other_login_pass">統一通行證</string>
     <string name="other_login_external">外置登陸</string>
     <string name="other_login_server_error">无認證伺服器</string>
+    <!-- Renderer Experimental Setup -->
+    <string name="preference_rendererexp_title">渲染器實驗性設置</string>
+    <string name="preference_rendererexp_description">針對於Mesa的實驗性設置</string>
+    <string name="preference_category_renderer_experimental_settings">渲染器實驗性設置</string>
+    <string name="preference_renderer_setup_title">使用渲染器實驗性設置</string>
+    <string name="preference_renderer_setup">針對於Mesa的實驗性設置</string>
+    <string name="preference_renderer_setup_default">使用默認配置</string>
+    <string name="preference_renderer_setup_second">使用Mesa23.0.4(Zink)</string>
+    <string name="preference_renderer_setup_vwl">使用lwarlip(Zink Mesa21.0.3)</string>
+    <string name="preference_renderer_setup_rvir">使用virpipe(Virgl)</string>
+    <string name="preference_renderer_setup_rpan">使用Panfrost</string>
 </resources>

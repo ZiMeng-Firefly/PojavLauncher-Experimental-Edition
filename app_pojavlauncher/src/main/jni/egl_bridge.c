@@ -255,38 +255,63 @@ int pojavInitOpenGL() {
 
     // NOTE: Override for now.
     const char *renderer = getenv("POJAV_BETA_RENDERER");
-    if (strncmp("opengles3_virgl", renderer, 15) == 0) {
-        pojav_environ->config_renderer = RENDERER_VIRGL;
-        setenv("GALLIUM_DRIVER","virpipe",1);
-        setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1",false);
-        if(strcmp(getenv("OSMESA_NO_FLUSH_FRONTBUFFER"),"1") == 0) {
-            printf("VirGL: OSMesa buffer flush is DISABLED!\n");
-        }
-        loadSymbolsVirGL();
-    } else if (strncmp("opengles", renderer, 8) == 0) {
+    if (strncmp("opengles", renderer, 8) == 0) {
         pojav_environ->config_renderer = RENDERER_GL4ES;
         set_gl_bridge_tbl();
     } else if (strcmp(renderer, "vulkan_zink") == 0) {
-        load_vulkan();
-        setenv("GALLIUM_DRIVER","zink",1);
-        if(getenv("POJAV_ZINK_CRASH_HANDLE") == NULL) {
-            pojav_environ->config_renderer = RENDERER_VK_ZINK;
-            set_osm_bridge_tbl();
-            printf("Bridge: Set osm bridge tbl\n");
+        if(getenv("POJAV_EXP_SETUP") != NULL) {
+            printf("Bridge: Use Experimental Setup\n");
+            if(getenv("POJAV_EXP_SETUP_DEFAULT") != NULL || getenv("POJAV_EXP_SETUP_S") != NULL) {
+                load_vulkan();
+                setenv("GALLIUM_DRIVER","zink",1);
+                printf("Bridge: Use Deafult Config\n");
+                if(getenv("POJAV_ZINK_CRASH_HANDLE") == NULL) {
+                    pojav_environ->config_renderer = RENDERER_VK_ZINK;
+                    set_osm_bridge_tbl();
+                    printf("Bridge: Set osm bridge tbl\n");
+                } else {
+                    pojav_environ->config_renderer = RENDERER_VK_ZINK_PREF;
+                    loadSymbols();
+                    printf("Bridge: Use old bridge\n");
+                }
+            }
+            if(getenv("POJAV_EXP_SETUP_VIRGL") != NULL) {
+                printf("Bridge: Use VirglRenderer\n");
+                pojav_environ->config_renderer = RENDERER_VIRGL;
+                setenv("GALLIUM_DRIVER","virpipe",1);
+                setenv("OSMESA_NO_FLUSH_FRONTBUFFER","1",false);
+                if(strcmp(getenv("OSMESA_NO_FLUSH_FRONTBUFFER"),"1") == 0) {
+                    printf("VirGL: OSMesa buffer flush is DISABLED!\n");
+                }
+                loadSymbolsVirGL();
+            }
+            if(getenv("POJAV_EXP_SETUP_LW") != NULL) {
+                printf("Bridge: Use ZinkRenderer Mesa21.0.3\n");
+                pojav_environ->config_renderer = RENDERER_VK_WARLIP;
+                setenv("GALLIUM_DRIVER","zink",1);
+                loadSymbols();
+            }
+            if(getenv("POJAV_EXP_SETUP_PAN") != NULL) {
+                printf("Bridge: Use PanfrostRenderer\n");
+                pojav_environ->config_renderer = RENDERER_VK_ZINK;
+                setenv("GALLIUM_DRIVER", "panfrost", 1);
+                setenv("PAN_DEBUG","gofaster", 0);
+                set_osm_bridge_tbl();
+            }
         } else {
-            pojav_environ->config_renderer = RENDERER_VK_ZINK_PREF;
-            loadSymbols();
-            printf("Bridge: Use old bridge\n");
+            load_vulkan();
+            setenv("GALLIUM_DRIVER","zink",1);
+            printf("Bridge: Use Deafult Config\n");
+            if(getenv("POJAV_ZINK_CRASH_HANDLE") == NULL) {
+                pojav_environ->config_renderer = RENDERER_VK_ZINK;
+                set_osm_bridge_tbl();
+                printf("Bridge: Set osm bridge tbl\n");
+            } else {
+                pojav_environ->config_renderer = RENDERER_VK_ZINK_PREF;
+                loadSymbols();
+                printf("Bridge: Use old bridge\n");
+            }
         }
-    } else if (strcmp(renderer, "malihw_panfrost") == 0) {
-        pojav_environ->config_renderer = RENDERER_VK_ZINK;
-        setenv("GALLIUM_DRIVER", "panfrost", 1);
-        setenv("PAN_DEBUG","gofaster", 0);
-        set_osm_bridge_tbl();
-    } else if (strcmp(renderer, "vulkan_warlip") == 0) {
-        pojav_environ->config_renderer = RENDERER_VK_WARLIP;
-        setenv("GALLIUM_DRIVER","zink",1);
-        loadSymbols();
     }
     if(pojav_environ->config_renderer == RENDERER_VK_ZINK || pojav_environ->config_renderer == RENDERER_GL4ES) {
         if(br_init()) {
