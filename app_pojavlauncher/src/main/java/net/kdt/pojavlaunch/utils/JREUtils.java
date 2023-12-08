@@ -238,7 +238,7 @@ public class JREUtils {
                     if(PREF_EXP_SETUP_PAN){
                         envMap.put("MESA_GL_VERSION_OVERRIDE", "3.3");
                         envMap.put("MESA_GLSL_VERSION_OVERRIDE", "330");
-                        envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
+                        //envMap.put("POJAVEXEC_OSMESA", "libOSMesa_pan.so");
                         //envMap.put("MESA_SHADER_CACHE_DISABLE", "true");
                         envMap.put("MESA_DISK_CACHE_SINGLE_FILE", "1");
                         envMap.put("MESA_DISK_CACHE_SINGLE_FILE", "true");
