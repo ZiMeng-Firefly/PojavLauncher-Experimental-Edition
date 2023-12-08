@@ -10,19 +10,19 @@
             android:key="ExperimentalSetup"
             android:title="@string/preference_renderer_setup_title"
             android:summary="@string/preference_renderer_setup"/>
-        <androidx.preference.SwitchPreferenceCompat
+        <SwitchPreference
             android:key="ZinkF"
             android:title="@string/preference_renderer_setup_default"/>
-        <androidx.preference.SwitchPreferenceCompat
+        <SwitchPreference
             android:key="ZinkS"
             android:title="@string/preference_renderer_setup_second"/>
-        <androidx.preference.SwitchPreferenceCompat
+        <SwitchPreference
             android:key="VulkanLwarlip"
             android:title="@string/preference_renderer_setup_vwl"/>
-        <androidx.preference.SwitchPreferenceCompat
+        <SwitchPreference
             android:key="Rvirpipe"
             android:title="@string/preference_renderer_setup_rvir"/>
-        <androidx.preference.SwitchPreferenceCompat
+        <SwitchPreference
             android:key="Rpanfrost"
             android:title="@string/preference_renderer_setup_rpan"/>
 
