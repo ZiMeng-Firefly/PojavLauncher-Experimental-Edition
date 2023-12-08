@@ -30,10 +30,10 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
     }
 
     private void computeVisibility(){
-        requirePreference("ZinkF", SwitchPreferenceCompat.class).setVisible(LauncherPreferences.PREF_EXP_SETUP);
-        requirePreference("ZinkS", SwitchPreferenceCompat.class).setVisible(LauncherPreferences.PREF_EXP_SETUP);
-        requirePreference("VulkanLwarlip", SwitchPreferenceCompat.class).setVisible(LauncherPreferences.PREF_EXP_SETUP);
-        requirePreference("Rvirpipe", SwitchPreferenceCompat.class).setVisible(LauncherPreferences.PREF_EXP_SETUP);
-        requirePreference("Rpanfrost", SwitchPreferenceCompat.class).setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("ZinkF").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("ZinkS").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("VulkanLwarlip").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("Rvirpipe").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("Rpanfrost").setVisible(LauncherPreferences.PREF_EXP_SETUP);
     }
 }
