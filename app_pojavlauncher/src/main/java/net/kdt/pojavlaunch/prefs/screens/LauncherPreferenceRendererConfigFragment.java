@@ -21,6 +21,7 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
     @Override
     public void onCreatePreferences(Bundle b, String str) {
         addPreferencesFromResource(R.xml.pref_renderexp);
+        computeVisibility();
     }
 
     @Override
