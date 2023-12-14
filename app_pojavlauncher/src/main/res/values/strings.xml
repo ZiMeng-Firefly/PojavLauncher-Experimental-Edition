@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App name part -->
-    <string name="app_name">Pojav EXP</string>
-    <string name="app_short_name">Pojav EXP</string>
+    <string name="app_name">Pojav Beta·Zink</string>
+    <string name="app_short_name">Pojav Beta·Zink</string>
+
     <!-- Action bar part -->
 
     <!-- Languages list part -->
@@ -64,7 +65,7 @@
     <string name="mcl_setting_subtitle_javaargs">Be careful, this may make game crash if modified without knowledge.</string>
     <string name="mcl_setting_category_renderer">Renderer</string>
     <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (all versions, fast)</string>
-    <string name="mcl_setting_renderer_vulkan_zink">Mesa(Vulkan)</string>
+    <string name="mcl_setting_renderer_vulkan_zink">Zink Mesa23.2.0(Vulkan) - (all versions, mid)</string>
     <string name="mcl_setting_renderer_angle">ANGLE (Vulkan) - (1.17+ only, mid)</string>
     <string name="mcl_setting_renderer_panfrost">Panfrost (Mali) - (all versions, mid)</string>
     <string name="mcl_setting_veroption_release">Release</string>
@@ -130,7 +131,7 @@
     <!--
     <string name="control_more3"></string>
     <string name="control_more4"></string>
-    -->
+-->
 
     <string name="customctrl_toggle">Toggleable</string>
     <string name="customctrl_size">Size</string>
@@ -170,6 +171,7 @@
     <string name="customctrl_passthru">Mouse pass-thru</string>
     <string name="customctrl_swipeable">Swipeable</string>
     <string name="customctrl_forward_lock">Forward lock</string>
+    <string name="customctrl_absolute_tracking">Absolute finger tracking</string>
     <string name="memory_warning_msg">The current amount of free RAM (%d) is lower than allocated RAM (%d), which may lead to crashes. Change the allocation if the game crashes.</string>
     <string name="mcl_memory_allocation">Memory allocation</string>
     <string name="mcl_memory_allocation_subtitle">Controls how much memory is given to Minecraft.</string>
@@ -375,7 +377,7 @@
     <string name="preference_category_microsoft_account_title">Microsoft Account</string>
     <string name="preference_category_local_account_title">Local account</string>
     <string name="preference_category_custom_path">Custom path</string>
-    <string name="app_start_toast">#Welcome to Pojav EXP!!!!</string>
+    <string name="app_start_toast">#Welcome to Pojav beta!!!!</string>
     <string name="mcl_setting_renderer_vulkan_warlip">Zink (Mesa21.0.3) - (all versions,very slow., low device compat)</string>
     <string name="mcl_setting_renderer_vgpu">vgpu - (up to 1.16.5, fast)</string>
     <string name="mcl_setting_renderer_virgl">virglrenderer - (release 1.7+, slow)</string>
@@ -405,15 +407,4 @@
     <string name="other_login_pass">Uniform Pass</string>
     <string name="other_login_external">External Landing</string>
     <string name="other_login_server_error">No authentication server</string>
-    <!-- Renderer Experimental Setup -->
-    <string name="preference_rendererexp_title">Renderer Experimental Settings</string>
-    <string name="preference_rendererexp_description">Experimental setup for Mesa</string>
-    <string name="preference_category_renderer_experimental_settings">renderer exp setup</string>
-    <string name="preference_renderer_setup_title">Enable Renderer Exp Setup</string>
-    <string name="preference_renderer_setup">experimental setup for the Mesa</string>
-    <string name="preference_renderer_setup_default">Use default configuration</string>
-    <string name="preference_renderer_setup_second">Use Mesa23.0.4(Zink)</string>
-    <string name="preference_renderer_setup_vwl">Use lwarlip(Zink Mesa21.0.3)</string>
-    <string name="preference_renderer_setup_rvir">Set virpipe(Virgl)</string>
-    <string name="preference_renderer_setup_rpan">Set Panfrost</string>
 </resources>

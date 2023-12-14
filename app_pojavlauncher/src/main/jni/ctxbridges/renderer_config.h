@@ -1,5 +1,6 @@
 //
 // Created by Vera-Firefly on 2.12.2023.
+// Definitions specific to the renderer
 //
 
 
