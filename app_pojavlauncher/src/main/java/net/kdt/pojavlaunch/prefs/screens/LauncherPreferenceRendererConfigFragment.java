@@ -1,21 +1,12 @@
 package net.kdt.pojavlaunch.prefs.screens;
 
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 
-import androidx.preference.ListPreference;
-import androidx.preference.SwitchPreference;
-import androidx.preference.SwitchPreferenceCompat;
-
 import net.kdt.pojavlaunch.R;
-import net.kdt.pojavlaunch.Tools;
-import net.kdt.pojavlaunch.prefs.CustomSeekBarPreference;
 import net.kdt.pojavlaunch.prefs.LauncherPreferences;
 
-/**
- * Fragment for any settings video related
- */
+//Experimental Settings for Mesa renderer
 public class LauncherPreferenceRendererConfigFragment extends LauncherPreferenceFragment {
 
     @Override
