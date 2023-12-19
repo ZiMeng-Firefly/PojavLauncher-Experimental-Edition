@@ -101,16 +101,10 @@ android {
             keyAlias "androiddebugkey"
             keyPassword "android"
         }
-        googlePlayBuild {
-            storeFile file("upload.jks")
-            storePassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
-            keyAlias "upload"
-            keyPassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
-        }
     }
 
     defaultConfig {
-        applicationId "net.kdt.pojavlaunch"
+        applicationId "net.kdt.pojavlaunch.beta"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode getDateSeconds()
@@ -121,7 +115,7 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix '.beta.debug'
+            applicationIdSuffix '.debug'
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -134,21 +128,6 @@ android {
             initWith debug
             minifyEnabled true
             shrinkResources true
-        }
-
-        release {
-            // Don't set to true or java.awt will be a.a or something similar.
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            // defaultConfig already set
-            // multiDexEnabled = true
-            // debuggable = true
-            resValue 'string', 'storageProviderAuthorities', 'net.kdt.pojavlaunch.scoped.gamefolder'
-            resValue 'string', 'application_package', 'net.kdt.pojavlaunch'
-        }
-        gplay {
-            initWith release
-            signingConfig signingConfigs.googlePlayBuild
         }
     }
 
