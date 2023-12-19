@@ -44,14 +44,8 @@ def getVersionName = {
     if(TAG.toString() != ""){
         TAG_STRING = TAG.toString()
     }else {
-        if(TAG_PART_COMMIT.toString().trim() == ""){
-             //Fallback no repo
-            return ("LOCAL-" + "${getDate()}")
-        }else {
-            // Used by github actions
-            TAG_STRING =  'edelweiss-' + "${getDate()}" + "-" + TAG_PART_COMMIT.toString().trim()
-        }
-
+         // Used by github actions
+         TAG_STRING =  'edelweiss-' + "${getDate()}" + "-" + TAG_PART_COMMIT.toString().trim()
     }
 
     exec {
