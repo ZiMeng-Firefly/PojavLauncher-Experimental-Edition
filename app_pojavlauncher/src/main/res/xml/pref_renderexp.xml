@@ -25,6 +25,9 @@
         <SwitchPreference
             android:key="Rpanfrost"
             android:title="@string/preference_renderer_setup_rpan"/>
+        <SwitchPreference
+            android:key="Rfreedreno"
+            android:title="@string/preference_renderer_setup_freedreno"/>
 
         <SwitchPreference
             android:defaultValue="false"
