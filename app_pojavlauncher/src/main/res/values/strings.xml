@@ -417,8 +417,9 @@
     <string name="preference_renderer_setup_title">Enable Renderer Exp Setup</string>
     <string name="preference_renderer_setup">experimental setup for the Mesa</string>
     <string name="preference_renderer_setup_default">Use default configuration</string>
-    <string name="preference_renderer_setup_second">Use Mesa23.0.4(Zink)</string>
-    <string name="preference_renderer_setup_vwl">Use lwarlip(Zink Mesa21.0.3)</string>
-    <string name="preference_renderer_setup_rvir">Set virpipe(Virgl)</string>
-    <string name="preference_renderer_setup_rpan">Set Panfrost</string>
+    <string name="preference_renderer_setup_second">Mesa23.0.4(Zink)</string>
+    <string name="preference_renderer_setup_vwl">lwarlip(Zink Mesa21.0.3)</string>
+    <string name="preference_renderer_setup_rvir">virpipe(Virgl)</string>
+    <string name="preference_renderer_setup_rpan">Panfrost</string>
+    <string name="preference_renderer_setup_freedreno">Freedreno</string>
 </resources>
