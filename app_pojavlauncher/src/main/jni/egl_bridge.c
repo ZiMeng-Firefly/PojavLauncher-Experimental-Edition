@@ -298,6 +298,20 @@ int pojavInitOpenGL() {
                 setenv("PAN_DEBUG","gofaster", 0);
                 set_osm_bridge_tbl();
             }
+            if(getenv("POJAV_EXP_SETUP_FD") != NULL) {
+                setenv("GALLIUM_DRIVER", "freedreno", 1);
+                setenv("MESA_LOADER_DRIVER_OVERRIDE", "kgsl", 1);
+                printf("Bridge: Use Freedreno renderer\n");
+                if(getenv("POJAV_ZINK_CRASH_HANDLE") == NULL) {
+                    pojav_environ->config_renderer = RENDERER_VK_ZINK;
+                    set_osm_bridge_tbl();
+                    printf("Bridge: Set osm bridge tbl\n");
+                } else {
+                    pojav_environ->config_renderer = RENDERER_VK_ZINK_PREF;
+                    loadSymbols();
+                    printf("Bridge: Use old bridge\n");
+                }
+            }
         } else {
             load_vulkan();
             setenv("GALLIUM_DRIVER","zink",1);
