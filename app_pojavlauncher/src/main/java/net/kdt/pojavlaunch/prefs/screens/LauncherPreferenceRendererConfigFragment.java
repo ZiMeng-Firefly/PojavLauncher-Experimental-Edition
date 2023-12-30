@@ -27,5 +27,6 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         requirePreference("VulkanLwarlip").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rvirpipe").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rpanfrost").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("Rfreedreno").setVisible(LauncherPreferences.PREF_EXP_FD);
     }
 }
