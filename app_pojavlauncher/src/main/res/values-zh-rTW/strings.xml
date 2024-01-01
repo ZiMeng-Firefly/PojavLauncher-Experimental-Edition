@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App name part -->
+    <string name="app_name">Pojav EXP</string>
+    <string name="app_short_name">Pojav EXP</string>
+    <!-- Action bar part -->
+    <!-- Languages list part -->
+    <!-- Login strings -->
+    <string name="login_online_username_hint">電子郵箱或用戶名</string>
+    <string name="login_online_login_label">登入</string>
+    <!-- Hint -->
+    <string name="hint_control_mapping">"點擊上方齒輪符號開啟選單⚙\n點擊以編輯控制鍵大小、按鍵定義、名稱、顏色，或者刪除。"</string>
+    <!-- Warnings -->
+    <string name="warning_remove_account">將移除此帳號！</string>
+    <!-- AlertDialog title -->
+    <string name="alerttitle_installmod">選擇 Mod 安裝器</string>
+    <!-- Error messages -->
+    <string name="error_fatal">PojavLauncher 意外崩潰</string>
+    <string name="error_no_version">無版本！</string>
+    <string name="error_show_more">顯示細節</string>
+    <string name="error_show_less">隱藏細節</string>
+    <!-- Toast messages -->
+    <string name="toast_permission_denied">需要儲存寫入權限！</string>
+    <string name="toast_optifine_success">安裝成功</string>
+    <!--
+    <string name="toast_3">Exit</string>
+    -->
+    <!-- MCLauncherActivity: Tabs -->
+    <string name="mcl_tab_wiki">Github</string>
+    <!-- MCLauncherActivity: Account status -->
+    <!-- MCLauncherActivity: Strings -->
+    <string name="mcl_launch_cleancache">正在清理快取</string>
+    <string name="mcl_launch_downloading">正在下載 %s</string>
+    <string name="mcl_launch_downloading_progress">"下載中 %s (%.2f MB / %.2f MB)"</string>
+    <string name="mcl_launch_download_assets">正在準備下載資源</string>
+    <string name="mcl_options">選項</string>
+    <string name="mcl_option_customcontrol">自訂控制鍵</string>
+    <string name="mcl_setting_title_use_surface_view">使用SurfaceView渲染</string>
+    <string name="mcl_setting_title_ignore_notch">忽略瀏海螢幕</string>
+    <string name="mcl_setting_title_resolution_scaler">解析度縮放</string>
+    <string name="mcl_setting_title_buttonscale">控制鍵縮放</string>
+    <string name="mcl_setting_title_mousescale">滑鼠縮放</string>
+    <string name="mcl_setting_title_javaargs">JVM 啟動引數</string>
+    <string name="mcl_setting_subtitle_javaargs">注意，非專業人士修改此值可能導致遊戲崩潰。</string>
+    <string name="mcl_setting_category_renderer">渲染器</string>
+    <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (全版本, 快)</string>
+    <string name="mcl_setting_veroption_release">正式版</string>
+    <string name="mcl_setting_veroption_snapshot">快照</string>
+    <string name="mcl_setting_veroption_oldalpha">遠古alpha版</string>
+    <string name="mcl_setting_veroption_oldbeta">遠古beta版</string>
+    <string name="mcl_version_clone">複製</string>
+    <!-- Global strings -->
+    <string name="global_edit">修改</string>
+    <string name="global_error">錯誤</string>
+    <string name="global_load">載入</string>
+    <string name="global_name">名稱</string>
+    <string name="global_remove">移除</string>
+    <string name="global_clone">複製</string>
+    <string name="global_restart">重啟</string>
+    <string name="global_save">儲存</string>
+    <string name="global_unpacking">正在解壓縮套件 %s</string>
+    <string name="global_error_field_empty">此欄位為必填</string>
+    <string name="global_waiting">等待中</string>
+    <string name="global_select">選擇</string>
+    <string name="global_default">預設</string>
+    <!-- MainActivity: strings -->
+    <string name="mcn_exit_title">程式/遊戲以代碼 %d 退出，詳情請查看latestlog.txt。</string>
+    <string name="mcn_exit_confirm">確定強制關閉？</string>
+    <!-- MainActivity: Control buttons -->
+    <string name="control_chat">聊天</string>
+    <string name="control_debug">除錯</string>
+    <string name="control_primary">左</string>
+    <string name="control_secondary">右</string>
+    <string name="control_inventory">背包</string>
+    <string name="control_thirdperson">視角</string>
+    <string name="control_listplayers">Tab</string>
+    <string name="control_mouse">滑鼠</string>
+    <string name="control_mouseoff">滑鼠：關</string>
+    <string name="control_mouseon">滑鼠：開</string>
+    <!-- MainActivity: Menu advanced controls -->
+    <string name="control_forceclose">強制關閉</string>
+    <string name="control_viewout">日誌輸出</string>
+    <string name="control_adebug">輸入除錯</string>
+    <string name="control_customkey">傳送自訂鍵碼</string>
+    <!-- ImportControlActivity Strings -->
+    <string name="import_control_label">匯入控制鍵</string>
+    <string name="import_control_invalid_file">無效或損毀的的檔案</string>
+    <string name="import_control_import_button">導入控制鍵</string>
+    <string name="import_control_verifying_file">正在效驗檔案，請稍候再試...</string>
+    <string name="import_control_invalid_name">無效的檔案名或檔案已經存在</string>
+    <string name="import_control_done">導入完成</string>
+    <!--
+    <string name="control_more3"></string>
+    <string name="control_more4"></string>
+-->
+    <string name="customctrl_toggle">可切換</string>
+    <string name="customctrl_size">大小</string>
+    <string name="customctrl_mapping">對映</string>
+    <string name="customctrl_orientation">方向</string>
+    <string name="customctrl_background_color">背景顏色</string>
+    <string name="customctrl_corner_radius">圓角半徑</string>
+    <string name="customctrl_stroke_width">邊框粗細</string>
+    <string name="customctrl_stroke_color">邊框顏色</string>
+    <string name="customctrl_button_opacity">按鍵不透明度</string>
+    <string name="customctrl_addbutton">添加按鈕</string>
+    <string name="customctrl_addbutton_drawer">添加組合框</string>
+    <string name="customctrl_addsubbutton">添加子按鈕</string>
+    <string name="main_share_logs">分享log</string>
+    <string name="main_play">啟動遊戲</string>
+    <string name="autoram_info_msg">記憶體已設爲 %d MB</string>
+    <string name="mcl_setting_check_libraries">在下載後檢查執行庫</string>
+    <string name="dl_library_sha_fail">執行庫 %s 損毀，將重新下載</string>
+    <string name="dl_library_sha_unknown">無法檢查執行庫 %s 的狀態，默認為狀況良好。</string>
+    <string name="dl_library_sha_pass">執行庫 %s 正常</string>
+    <string name="mcl_disable_gestures">停用手勢</string>
+    <string name="mcl_disable_gestures_subtitle">停用手勢，例如長按破壞方塊和點擊放置方塊。</string>
+    <string name="mcl_setting_title_mousespeed">滑鼠速度</string>
+    <string name="customctrl_passthru">滑鼠透傳</string>
+    <string name="customctrl_swipeable">可滑動</string>
+    <string name="memory_warning_msg">目前可用記憶體 (%d) 低於分配的記憶體 (%d)，遊戲可能會崩潰。 如果遊戲崩潰請增加記憶體的分配量。</string>
+    <string name="mcl_memory_allocation">分配記憶體</string>
+    <string name="multirt_runtime_corrupt">Java執行環境毀損</string>
+    <string name="multirt_runtime_incompatiblearch">%s 與您的硬體架構不相容</string>
+    <string name="multirt_config_add">新建</string>
+    <string name="multirt_title">運行庫管理器</string>
+    <string name="multirt_progress_caching">正在快取……</string>
+    <string name="multirt_config_setdefault">設為預設</string>
+    <string name="multirt_config_setdefault_already">預設</string>
+    <string name="multirt_nocompartiblert">沒有可用的Java執行庫。此版本需要Java %d 以上。</string>
+    <string name="multirt_nojava8rt">找不到已安裝的Java 8。請安裝Java 8以使用此功能。</string>
+    <string name="pvc_gameDirectory">遊戲資料夾</string>
+    <string name="pvc_jvmArgs">JVM 參數</string>
+    <string name="preference_mouse_start_title">啟動時開啟虛擬滑鼠</string>
+    <string name="preference_video_title">顯示設定</string>
+    <string name="preference_control_title">自定控制鍵</string>
+    <string name="preference_java_title">Java 選項</string>
+    <string name="preference_misc_title">其他設定</string>
+    <string name="preference_experimental_title">實驗性選項</string>
+    <string name="preference_sustained_performance_title">啟用性能限制模式</string>
+    <string name="preference_edit_controls_title">自訂控制鍵</string>
+    <string name="preference_category_virtual_mouse">虛擬滑鼠</string>
+    <string name="preference_gyro_invert_x_axis">反轉X軸</string>
+    <string name="preference_gyro_invert_y_axis">反轉Y軸</string>
+    <string name="preference_back_title">返回上一個頁面</string>
+    <string name="unnamed">未命名</string>
+    <string name="profiles_latest_snapshot">最新快照</string>
+    <string name="profiles_latest_release">最新版本</string>
+    <string name="profiles_profile_name">名稱</string>
+    <string name="profiles_profile_version">版本</string>
+    <string name="global_delete">刪除</string>
+    <string name="pedit_java_runtime">Java執行環境</string>
+    <string name="pedit_renderer">渲染器</string>
+    <string name="arc_capes_title">Cosmetica披風</string>
+    <string name="arc_capes_desc">透過Cosmetica(前身為Arc)啟用披風。需要Optifine。更多資訊請至https://cosmetica.cc。</string>
+    <string name="notif_channel_name">一般設定</string>
+    <string name="lazy_service_default_title">Pojav背景服務</string>
+    <string name="mcl_setting_veroption_installed">已安裝</string>
+    <string name="use_global_default">(使用全域預設控制鍵)</string>
+    <string name="progresslayout_tasks_in_progress">%d 程式執行中</string>
+    <string name="notification_terminate">終止</string>
+    <string name="notification_game_runs">遊戲執行中！</string>
+    <string name="folder_dialog_create">新增</string>
+    <string name="folder_dialog_insert_name">請輸入資料夾名稱</string>
+    <string name="main_login_done">登入完成</string>
+    <string name="main_add_account">新增帳號</string>
+    <string name="tasks_ongoing">程式執行中，請稍後</string>
+    <string name="no_saved_accounts">無已儲存帳號</string>
+    <string name="mc_download_failed">Minecraft下載失敗! 可能導致失敗的原因有: 不穩定的網路連線、位置不正確的檔案......等</string>
+    <string name="xerr_unknown">未知的Xbox Live API錯誤 %d</string>
+    <string name="xerr_no_account">您似乎沒有Xbox Live帳號。請先登入https://minecraft.net/後再試一次。</string>
+    <string name="xerr_adult_verification">您的帳號需要被家長驗證</string>
+    <string name="xerr_child">因為您的Xbox帳號未成年，若要登入，請將該帳號加入一個microsoft家庭</string>
+    <string name="minecraft_not_owned">這個Xbox Live帳號似乎沒有[Minecraft:Java Edition]的設定檔。如果您仍有Xbox Game Pass訂閱，請至https://minecraft.net/登入並架設您的設定檔。</string>
+    <string name="xerr_not_available">Xbox Live服務在您所在的國家無法使用</string>
+    <string name="preference_enable_gyro_title">啟用陀螺儀控制</string>
+    <string name="preference_gyro_sensitivity_title">陀螺儀控制靈敏度</string>
+    <string name="preference_gyro_sample_rate_title">陀螺儀採樣率</string>
+    <string name="create_profile">新增設定檔</string>
+    <string name="of_dl_progress">正在下載 %s</string>
+    <string name="notification_permission_dialog_title">權限請求</string>
+    <string name="notification_permission_dialog_text">PojavLauncher需要發布通知的權限，以防止您離開應用程序時，停止 遊戲/模組包 的下載。如果沒有此權限，當您將PojavLauncher置于後台時，安卓系統可能會停止您的下載進度</string>
+    <string name="notification_permission_toast">您可以隨時通過進入"系統設置"改變您的主意</string>
+    <string name="preference_ask_for_notification_title">允許通知</string>
+    <string name="preference_ask_for_notification_description">單擊可重新請求通知權限，這是 遊戲/模組包 在後台正常下載所必需的</string>
+    <string name="preference_vsync_in_zink_title">允許在使用 Zink 時啟用垂直同步</string>
+    <string name="preference_vsync_in_zink_description">允許啟動器使用內部系統 API 為 Zink 啟用垂直同步,如果您的啟動器在系統更新后在使用 Zink 時突然崩潰,請關閉這個選項</string>
+    <string name="exception_failed_to_unpack_jre17">無法安裝 JRE 17</string>
+    <string name="newdl_starting">正在讀取遊戲元數據...</string>
+    <string name="newdl_downloading_metadata">正在下載遊戲元數據 (%s)</string>
+    <string name="newdl_downloading_game_files">正在下載遊戲文件... (%d/%d, %.2f MB)</string>
+
+    <!-- App New Annotation -->
+    <string name="preference_category_gestures">手勢</string>
+    <string name="preference_category_buttons">按鍵</string>
+    <string name="preference_category_experimental_settings">實驗性的補丁</string>
+    <string name="preference_category_java_tweaks">Java調整</string>
+    <string name="preference_category_main_categories">更多設置</string>
+    <string name="preference_category_miscellaneous">其它設置</string>
+    <string name="preference_category_video">視頻和渲染器</string>
+    <string name="preference_category_visibility_title">可見性</string>
+    <string name="preference_category_in_game_title">遊戲內顯示</string>
+    <string name="preference_category_in_menu_title">遊戲外顯示</string>
+    <string name="preference_category_microsoft_account_title">微軟賬號</string>
+    <string name="preference_category_local_account_title">離線賬號</string>
+    <string name="preference_category_custom_path">自定義路徑</string>
+    <string name="mcl_setting_renderer_vulkan_warlip">Zink Mesa21.0.3 - (所有版本可用,非常慢)</string>
+    <string name="app_start_toast">#歡迎使用Pojav EXP!!!!</string>
+    <string name="mcl_setting_renderer_virgl">virglrenderer - (1.7 及以上版本可用，速度較慢)</string>
+    <string name="mcl_setting_renderer_vgpu">vgpu - (1.16.5 及以下版本可用，速度較快)</string>
+    <string name="preference_mouse_description">設置遊戲內鼠標圖標</string>
+    <string name="preference_mouse_title">鼠標圖標自定義</string>
+    <string name="notif_mouse">設置完成</string>
+    <string name="preference_mouse_title1">刪除設置的鼠標圖標</string>
+    <string name="notif_mouse1">刪除成功</string>
+    <string name="microsoft_login_fragment">開始登陸!</string>
+    <string name="preference_zink_crash_handle_title">使用舊的Bridge</string>
+    <string name="preference_zink_crash_handle">在使用zink啟動1.20.x-forge崩潰時開啟它,僅影響zink</string>
+    <string name="customctrl_absolute_tracking">絕對手指跟蹤</string>
+    <!-- Other login -->
+    <string name="other_login_api">外置登錄</string>
+    <string name="other_login_authentication_server">身份驗證伺服器</string>
+    <string name="other_login_register">註冊</string>
+    <string name="other_login_email">郵箱或使用者名</string>
+    <string name="other_login_password">密碼</string>
+    <string name="other_login">登錄</string>
+    <string name="other_login_aut">請選擇認證伺服器類型</string>
+    <string name="other_login_tip">提示</string>
+    <string name="other_login_confirm">確認</string>
+    <string name="other_login_cancel">取消</string>
+    <string name="other_login_role">請選擇角色</string>
+    <string name="other_login_warning">警告</string>
+    <string name="other_login_address">請輸入Yggdrasil API 認證伺服器地址</string>
+    <string name="other_login_setid">請輸入32位伺服器ID</string>
+    <string name="other_login_pass">統一通行證</string>
+    <string name="other_login_external">外置登陸</string>
+    <string name="other_login_server_error">无認證伺服器</string>
+    <!-- Renderer Experimental Setup -->
+    <string name="preference_rendererexp_title">渲染器實驗性設置</string>
+    <string name="preference_rendererexp_description">針對於Mesa的實驗性設置</string>
+    <string name="preference_category_renderer_experimental_settings">渲染器實驗性設置</string>
+    <string name="preference_renderer_setup_title">使用渲染器實驗性設置</string>
+    <string name="preference_renderer_setup">針對於Mesa的實驗性設置</string>
+    <string name="preference_renderer_setup_default">使用默認配置</string>
+</resources>

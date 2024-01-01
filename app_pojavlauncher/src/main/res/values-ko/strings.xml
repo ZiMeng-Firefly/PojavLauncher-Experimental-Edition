@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App name part -->
+    <string name="app_name">Pojav EXP</string>
+    <string name="app_short_name">Pojav EXP</string>
+    <!-- Action bar part -->
+    <!-- Languages list part -->
+    <!-- Login strings -->
+    <string name="login_online_username_hint">이메일 또는 사용자명</string>
+    <string name="login_online_login_label">로그인</string>
+    <!-- Hint -->
+    <string name="hint_control_mapping">"컨텍스트 메뉴를 열려면 가운데 아이콘을 누르세요⚙\n단축키를 수정, 크기 조정, 삭제하려면 버튼을 누르세요"</string>
+    <!-- Warnings -->
+    <string name="warning_remove_account">이 계정이 제거될 거예요!</string>
+    <!-- AlertDialog title -->
+    <string name="alerttitle_installmod">모드 설치기를 선택하세요</string>
+    <!-- Error messages -->
+    <string name="error_fatal">PojavLauncher에 예기치 못한 충돌이 발생했어요</string>
+    <string name="error_no_version">버전이 없습니다!</string>
+    <string name="error_show_more">더 보기</string>
+    <string name="error_show_less">간략히 보기</string>
+    <!-- Toast messages -->
+    <string name="toast_permission_denied">저장소 읽고 쓰기 권한이 필요합니다!</string>
+    <string name="toast_optifine_success">설치 성공</string>
+    <!--
+    <string name="toast_3">Exit</string>
+    -->
+    <!-- MCLauncherActivity: Tabs -->
+    <string name="mcl_tab_wiki">위키</string>
+    <!-- MCLauncherActivity: Account status -->
+    <!-- MCLauncherActivity: Strings -->
+    <string name="mcl_launch_cleancache">캐시 비우기</string>
+    <string name="mcl_launch_downloading">%s 다운로드 중</string>
+    <string name="mcl_launch_downloading_progress">"%s 다운로드 중 (%.2f MB / %.2f MB)"</string>
+    <string name="mcl_launch_download_assets">다운로드 준비 중</string>
+    <string name="mcl_options">설정</string>
+    <string name="mcl_option_customcontrol">사용자 지정 조작</string>
+    <string name="mcl_setting_title_use_surface_view">대체 표면 렌더링을 사용합니다</string>
+    <string name="mcl_setting_title_ignore_notch">노치 무시하기</string>
+    <string name="mcl_setting_title_resolution_scaler">해상도 비율</string>
+    <string name="mcl_setting_title_buttonscale">컨트롤 버튼 크기</string>
+    <string name="mcl_setting_title_mousescale">마우스 크기</string>
+    <string name="mcl_setting_title_javaargs">JVM 시작 스크립트</string>
+    <string name="mcl_setting_subtitle_javaargs">조심하세요. 사전 지식 없이 이것을 수정하면 게임이 충돌할 수 있습니다.</string>
+    <string name="mcl_setting_category_renderer">렌더러</string>
+    <string name="mcl_setting_renderer_gles2_4">Holy GL4ES - (모든 버전 호환, 빠릅니다)</string>
+    <string name="mcl_setting_veroption_release">릴리즈</string>
+    <string name="mcl_setting_veroption_snapshot">스냅숏</string>
+    <string name="mcl_setting_veroption_oldalpha">Old-alpha</string>
+    <string name="mcl_setting_veroption_oldbeta">Old-beta</string>
+    <string name="mcl_version_clone">복제</string>
+    <!-- Global strings -->
+    <string name="global_edit">수정</string>
+    <string name="global_error">오류</string>
+    <string name="global_load">불러오기</string>
+    <string name="global_name">이름</string>
+    <string name="global_remove">제거</string>
+    <string name="global_clone">복제</string>
+    <string name="global_restart">재시작</string>
+    <string name="global_save">저장</string>
+    <string name="global_unpacking">압축 해제 중 %s</string>
+    <string name="global_error_field_empty">이 칸은 비워둘 수 없습니다</string>
+    <string name="global_waiting">기다려주세요</string>
+    <string name="global_select">선택</string>
+    <string name="global_retry">다시시도</string>
+    <string name="global_default">기본값</string>
+    <!-- MainActivity: strings -->
+    <string name="mcn_exit_title">애플리케이션/게임이 코드 %d와 함께 종료되었습니다, lastestlog.txt를 확인하여 추가 정보를 확인하세요.</string>
+    <string name="mcn_exit_confirm">강제로 종료하시겠습니까?</string>
+    <!-- MainActivity: Control buttons -->
+    <string name="control_chat">챗</string>
+    <string name="control_debug">디버그</string>
+    <string name="control_primary">LMB</string>
+    <string name="control_secondary">RMB</string>
+    <string name="control_shift">◇</string>
+    <string name="control_inventory">Inv</string>
+    <string name="control_up">▲</string>
+    <string name="control_left">◀</string>
+    <string name="control_right">▶</string>
+    <string name="control_down">▼</string>
+    <string name="control_jump">⬛</string>
+    <string name="control_thirdperson">3인칭</string>
+    <string name="control_listplayers">Tab</string>
+    <string name="control_mouse">마우스</string>
+    <string name="control_mouseoff">마우스: 끔</string>
+    <string name="control_mouseon">마우스: 켬 </string>
+    <!-- MainActivity: Menu advanced controls -->
+    <string name="control_forceclose">강제 종료</string>
+    <string name="control_viewout">로그 확인</string>
+    <string name="control_adebug">디버그 표시</string>
+    <string name="control_customkey">사용자 지정 키 보내기</string>
+    <!-- ImportControlActivity Strings -->
+    <string name="import_control_label">컨트롤 가져오기</string>
+    <string name="import_control_invalid_file">잘못되거나 손상된 파일입니다</string>
+    <string name="import_control_import_button">컨트롤 가져오기</string>
+    <string name="import_control_verifying_file">파일을 확인하는 중, 나중에 다시 시도하세요...</string>
+    <string name="import_control_invalid_name">이름이 잘못되었거나 파일이 이미 존재합니다</string>
+    <string name="import_control_done">가져오기 완료</string>
+    <!--
+    <string name="control_more3"></string>
+    <string name="control_more4"></string>
+-->
+    <string name="customctrl_toggle">토글</string>
+    <string name="customctrl_size">크기</string>
+    <string name="customctrl_mapping">매핑</string>
+    <string name="customctrl_orientation">방향</string>
+    <string name="customctrl_background_color">배경 색상</string>
+    <string name="customctrl_corner_radius">모서리 반지름</string>
+    <string name="customctrl_stroke_width">선 굵기</string>
+    <string name="customctrl_stroke_color">강조 색</string>
+    <string name="customctrl_button_opacity">버튼 투명도</string>
+    <string name="customctrl_addbutton">버튼 추가</string>
+    <string name="customctrl_addbutton_drawer">버튼 드로어 추가</string>
+    <string name="customctrl_addbutton_joystick">조이스틱 추가</string>
+    <string name="customctrl_addsubbutton">부속 버튼 추가</string>
+    <string name="main_share_logs">기록 파일 공유</string>
+    <string name="main_play">시작하기</string>
+    <string name="autoram_info_msg">메모리가 %dMB 할당되었습니다.</string>
+    <string name="mcl_setting_check_libraries">다운로드 후 라이브러리 확인</string>
+    <string name="dl_library_sha_fail">라이브러리 %s가 손상되었기 때문에 다시 다운로드 합니다</string>
+    <string name="dl_library_sha_unknown">%s 라이브러리를 확인할 수 없습니다.</string>
+    <string name="dl_library_sha_pass">%s 라이브러리를 이용할 수 있습니다.</string>
+    <string name="mcl_disable_gestures">제스쳐 비활성화</string>
+    <string name="mcl_disable_gestures_subtitle">탭하여 블록 설치, 길게 눌러 블록 파괴와 같은 제스쳐를 비활성화 합니다</string>
+    <string name="mcl_disable_swap_hand">더블탭 해 손 바꾸기 비활성화</string>
+    <string name="mcl_setting_title_mousespeed">마우스 속도</string>
+    <string name="customctrl_passthru">마우스 패스스루</string>
+    <string name="customctrl_swipeable">끌어당기기</string>
+    <string name="customctrl_forward_lock">전면 잠금</string>
+    <string name="memory_warning_msg">현재 사용 가능한 RAM 크기(%d) 가 할당된 RAM 크기(%d) 보다 낮습니다. 게임이 충돌할 경우 할당량을 변경하세요.</string>
+    <string name="mcl_memory_allocation">메모리 할당</string>
+    <string name="multirt_runtime_corrupt">사용 불가능한 Java 런타임</string>
+    <string name="multirt_runtime_incompatiblearch">호환되지 않는 아키텍쳐: %s</string>
+    <string name="multirt_config_add">새로 추가</string>
+    <string name="multirt_title">런타임 관리자</string>
+    <string name="multirt_progress_caching">캐시 중...</string>
+    <string name="multirt_config_setdefault">기본으로 설정</string>
+    <string name="multirt_config_setdefault_already">기본값</string>
+    <string name="multirt_nocompartiblert">호환되는 Java 런타임을 찾지 못했습니다. 이 버전은 Java %d 이상이 필요합니다.</string>
+    <string name="multirt_nojava8rt">Java 8을 찾지 못했습니다. 이 옵션을 사용하려면, Java 8을 설치해야 합니다.</string>
+    <string name="multirt_delete_runtime">런타임 제거</string>
+    <string name="pvc_gameDirectory">게임 디렉토리</string>
+    <string name="pvc_jvmArgs">JVM 실행 설정</string>
+    <string name="preference_mouse_start_title">가상마우스가 켜진 상태로 시작합니다</string>
+    <string name="preference_video_title">비디오와 렌더러</string>
+    <string name="preference_control_title">사용자 지정 조작</string>
+    <string name="preference_java_title">Java 기능</string>
+    <string name="preference_misc_title">기타 설정</string>
+    <string name="preference_experimental_title">실험적 기능</string>
+    <string name="preference_sustained_performance_title">성능 유지 모드를 활성화합니다</string>
+    <string name="preference_edit_controls_title">사용자 지정 조작 편집</string>
+    <string name="preference_category_virtual_mouse">가상 마우스</string>
+    <string name="preference_gyro_invert_x_axis">X축 반전</string>
+    <string name="preference_gyro_invert_y_axis">Y축 반전</string>
+    <string name="preference_gyro_smoothing_description">지연 시간 대비 지터 감소</string>
+    <string name="preference_back_title">이전 화면으로</string>
+    <string name="unnamed">이름없음</string>
+    <string name="profiles_latest_snapshot">최신 스냅샷</string>
+    <string name="profiles_latest_release">최신 버전</string>
+    <string name="profiles_profile_name">이름</string>
+    <string name="profiles_profile_version">버전</string>
+    <string name="global_delete">삭제</string>
+    <string name="pedit_java_runtime">자바 런타임</string>
+    <string name="pedit_renderer">렌더러</string>
+    <string name="arc_capes_title">코스메티카 망토</string>
+    <string name="arc_capes_desc">코스메티카 망토를 활성화합니다 (구 아크)
+더 많은 정보를 위해
+https://cosmetica.cc 를 방문해주세요.
+옵티파인 모드가 필요합니다.</string>
+    <string name="notif_channel_name">일반</string>
+    <string name="lazy_service_default_title">Pojav 포그라운드 서비스</string>
+    <string name="mcl_setting_veroption_installed">설치됨</string>
+    <string name="use_global_default">(글로벌 기본값 사용)</string>
+    <string name="progresslayout_tasks_in_progress">작업 %d개 진행 중</string>
+    <string name="notification_terminate">종료</string>
+    <string name="notification_game_runs">게임이 실행 중이에요!</string>
+    <string name="folder_dialog_create">생성</string>
+    <string name="folder_dialog_insert_name">폴더 이름 입력</string>
+    <string name="folder_fragment_create">폴더 생성</string>
+    <string name="main_login_done">로그인 완료</string>
+    <string name="main_add_account">계정 추가</string>
+    <string name="tasks_ongoing">작업이 진행 중이에요. 기다려 주세요</string>
+    <string name="no_saved_accounts">저장된 계정 없음</string>
+    <string name="mc_download_failed">Minecraft 다운로드에 실패했습니다! 이것은 잘못된 네트워크 연결, 잘못 배치된 파일 등으로 인한 것일 수 있습니다.</string>
+    <string name="xerr_unknown">알수없는 Xbox Live API 오류 %d</string>
+    <string name="xerr_no_account">Xbox Live 계정이 없는 것 같습니다. https://minecraft.net/에서 한 번 로그인하고 다시 시도해주세요.</string>
+    <string name="xerr_adult_verification">당신의 계정을 인증하기위해 어른의 도움이 필요합니다.</string>
+    <string name="xerr_child">당신의 계정이 어린이의 계정입니다. 가족 구성원으로 추가되어야 로그인할 수 있습니다.</string>
+    <string name="minecraft_not_owned">이 계정은 마인크래프트를 소유하고있지 않은거 같습니다.
+만약 Xbox Game Pass를 소유하고 있다면 https://minecraft.net/ 여기에 로그인해 설정하세요.</string>
+    <string name="xerr_not_available">Xbox Live는 당신의 나라에서 사용할 수 없습니다.</string>
+    <string name="preference_enable_gyro_title">자이로스코프 컨트롤러 활성화</string>
+    <string name="preference_gyro_sensitivity_title">자이로스코프 감도 조절</string>
+    <string name="preference_gyro_sample_rate_title">자이로스코프 샘플링 속도</string>
+    <string name="microsoft_login_retry_later">요청이 너무 많습니다. 잠시후 다시 시도해 주세요.</string>
+    <string name="create_profile">새 프로필 생성</string>
+    <string name="preference_shader_dump_title">셰이더 덤핑 활성화</string>
+    <string name="percent_format">%d%%</string>
+    <string name="customctrl_editor_exit_title">나가시겠습니까?</string>
+    <string name="customctrl_editor_exit_msg">정말로 나가시겠습니까?</string>
+    <string name="customctrl_editor_exit">편집기 나가기</string>
+    <string name="global_save_and_exit">저장후 나가기</string>
+    <string name="global_yes">네</string>
+    <string name="global_no">아니오</string>
+    <string name="preference_category_controller_settings">컨트롤러 설정</string>
+    <string name="preference_wipe_controller_title">컨트롤러 재설정</string>
+    <string name="preference_deadzone_scale_title">조이스틱 데드존 크기</string>
+    <string name="version_select_hint">버전 선택</string>
+    <string name="forge_dl_progress">%s 인스톨러 다운로드중</string>
+    <string name="forge_dl_searching">Forge 버전 숫자를 찾는중</string>
+    <string name="modloader_dl_failed_to_load_list">버전 리스트 로드 실패</string>
+    <string name="forge_dl_no_installer">죄송합니다. 이 버전의 Forge는 아직 지원되는 인스톨러를 가지고 있지 않습니다.</string>
+    <string name="forge_dl_select_version">Forge 버전 선택</string>
+    <string name="fabric_dl_game_version">Minecraft 버전</string>
+    <string name="fabric_dl_install">설치</string>
+    <string name="modloader_dl_install_fabric">Fabric 프로필 생성</string>
+    <string name="modloader_dl_install_forge">Forge 프로필 생성</string>
+    <string name="create_profile_vanilla">Vanilla 프로필 생성</string>
+    <string name="create_profile_vanilla_like_versions">Vanilla와 비슷한 버전</string>
+    <string name="create_profile_modded_versions">수정된 버전</string>
+    <string name="fabric_dl_loader_title">버전 선택</string>
+    <string name="of_dl_select_version">OptiFine 버전 선택</string>
+    <string name="of_dl_failed_to_scrape">OptiFine 설치 정보 수집 실패</string>
+    <string name="of_dl_progress">%s 다운로드 중</string>
+    <string name="create_profile_optifine">OptiFine 프로필 생성</string>
+    <string name="hint_search_modpack">모드팩 검색</string>
+    <string name="generic_install">설치</string>
+    <string name="generic_apply">적용</string>
+    <string name="search_modpack_no_result">모드팩이 없습니다.</string>
+    <string name="search_modpack_error">모드팩을 찾는데 실패했습니다.</string>
+</resources>

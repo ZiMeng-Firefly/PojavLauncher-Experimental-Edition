@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App name part -->
+    <string name="app_name">Pojav EXP</string>
+    <string name="app_short_name">Pojav EXP</string>
+    <!-- Action bar part -->
+    <!-- Languages list part -->
+    <!-- Login strings -->
+    <string name="login_online_username_hint">البريد الإلكتروني أو اسم المستخدم</string>
+    <string name="login_online_login_label">تسجيل الدخول</string>
+    <!-- Hint -->
+    <string name="hint_control_mapping">"أضغط على أيقونة الإعداد لفتح قائمة التعديلات أضغط على زر \n ⚙: للتعديل، تغير الحجم، حذف 
+، أو تعديل ازرار التحكم."</string>
+    <!-- Warnings -->
+    <string name="warning_remove_account">سيتم إزالة هذا الحساب!</string>
+    <!-- AlertDialog title -->
+    <string name="alerttitle_installmod">حدد مشغل مودات للتثبيت</string>
+    <!-- Error messages -->
+    <string name="error_fatal">لقد توقف PojavLauncher بشكل غير متوقع</string>
+    <string name="error_no_version">لا يوجد إصدار!</string>
+    <string name="error_show_more">اظهر المزيد</string>
+    <string name="error_show_less">أظهِر أقل</string>
+    <!-- Toast messages -->
+    <string name="toast_permission_denied">مطلوب إذن القراءة و الكتابة للتخزين!</string>
+    <string name="toast_optifine_success">تم التثبيت بنجاح</string>
+    <!--
+    <string name="toast_3">Exit</string>
+    -->
+    <!-- MCLauncherActivity: Tabs -->
+    <string name="mcl_tab_wiki">موسوعة</string>
+    <!-- MCLauncherActivity: Account status -->
+    <!-- MCLauncherActivity: Strings -->
+    <string name="mcl_launch_cleancache">تنظيف ملفات ذاكرة التخزين المؤقت</string>
+    <string name="mcl_launch_downloading">التحميل جارٍ %s</string>
+    <string name="mcl_launch_downloading_progress">"جارٍ تنزيل %s (%.2f ميغابايت / %.2f ميغابايت)"</string>
+    <string name="mcl_launch_download_assets">جار الاستعداد لتنزيل الموارد</string>
+    <string name="mcl_options">الخيارات</string>
+    <string name="mcl_option_customcontrol">تخصيص التحكم</string>
+    <string name="mcl_setting_title_use_surface_view">استخدام عرض الأسطح البديل</string>
+    <string name="mcl_setting_subtitle_use_surface_view">.</string>
+    <string name="mcl_setting_title_ignore_notch">تجاهل النوتش</string>
+    <string name="mcl_setting_subtitle_ignore_notch">vg</string>
+    <string name="mcl_setting_title_resolution_scaler">مقياس الدقة</string>
+    <string name="mcl_setting_title_buttonscale">ضبط حجم أزرار التحكم</string>
+    <string name="mcl_setting_title_mousescale">توسيع حجم الفأرة</string>
+    <string name="mcl_setting_title_javaargs">حجج إطلاق JVM</string>
+    <string name="mcl_setting_subtitle_javaargs">كن حذرا، قد يجعل هذا اللعبة تتوقف إذا تم تعديلها بدون علم.</string>
+    <string name="mcl_setting_category_renderer">العارض</string>
+    <string name="mcl_setting_renderer_gles2_4">GL4ES المقدس - (جميع الإصدارات بسرعة)</string>
+    <string name="mcl_setting_veroption_release">إصدار نهائي</string>
+    <string name="mcl_setting_veroption_snapshot">اللمحات (سنابشوت)</string>
+    <string name="mcl_setting_veroption_oldalpha">نسخ ألفا قديمة</string>
+    <string name="mcl_setting_veroption_oldbeta">نسخ بيتا قديمة</string>
+    <string name="mcl_version_clone">نسخ</string>
+    <!-- Global strings -->
+    <string name="global_edit">تعديل</string>
+    <string name="global_error">خطأ</string>
+    <string name="global_load">تحميل</string>
+    <string name="global_name">الاسم</string>
+    <string name="global_remove">إزالة</string>
+    <string name="global_clone">نسخ</string>
+    <string name="global_restart">اعادة تشغيل</string>
+    <string name="global_save">حفظ</string>
+    <string name="global_unpacking">جاري فك الضغط %s</string>
+    <string name="global_error_field_empty">لا يمكن لهذه الخانة ان تكون فارغة</string>
+    <string name="global_waiting">انتظر</string>
+    <string name="global_select">اختر</string>
+    <string name="global_retry">أعد المحاولة</string>
+    <string name="global_default">مستخدم دائما</string>
+    <!-- MainActivity: strings -->
+    <string name="mcn_exit_title">تم الخروج من التطبيق/اللعبة بخلل %d، تحقق من latestlog.txt لمزيد من التفاصيل.</string>
+    <string name="mcn_exit_confirm">هل أنت متأكد من أنك تريد الإغلاق؟</string>
+    <!-- MainActivity: Control buttons -->
+    <string name="control_chat">دردشة</string>
+    <string name="control_debug">Debug</string>
+    <string name="control_primary">Pri</string>
+    <string name="control_secondary">Sec</string>
+    <string name="control_shift">◇</string>
+    <string name="control_inventory">Inv</string>
+    <string name="control_up">▲</string>
+    <string name="control_left">◀</string>
+    <string name="control_right">▶</string>
+    <string name="control_down">▼</string>
+    <string name="control_jump">⬛</string>
+    <string name="control_thirdperson">3rd</string>
+    <string name="control_listplayers">Tab</string>
+    <string name="control_mouse">الفأرة</string>
+    <string name="control_mouseoff">وضع الفأرة: موقفة</string>
+    <string name="control_mouseon">وضع الفأرة: مفعلة </string>
+    <!-- MainActivity: Menu advanced controls -->
+    <string name="control_forceclose">فرض الإغلاق</string>
+    <string name="control_viewout">سجل الإخراج</string>
+    <string name="control_adebug">مدخل التصحيح</string>
+    <string name="control_customkey">إرسال رمز مفتاحي مخصص</string>
+    <!-- ImportControlActivity Strings -->
+    <string name="import_control_label">استيراد ازرار التحكم</string>
+    <string name="import_control_invalid_file">المِلَفّ غير صالح أو تالف</string>
+    <string name="import_control_import_button">استيراد ازرار التحكم</string>
+    <string name="import_control_verifying_file">يتم التحقق من الملف، الرجاء الانتظار والمحاولة مرة أخرى…</string>
+    <string name="import_control_invalid_name">الاسم غير صالحا و المِلَفّ موجود مسبقًا</string>
+    <string name="import_control_done">تم الاستيراد</string>
+    <!--
+    <string name="control_more3"></string>
+    <string name="control_more4"></string>
+-->
+    <string name="customctrl_toggle">تبديلي</string>
+    <string name="customctrl_size">الحجم</string>
+    <string name="customctrl_mapping">تخطيط الأزرار</string>
+    <string name="customctrl_orientation">الإتجاة</string>
+    <string name="customctrl_background_color">لون الخلفية</string>
+    <string name="customctrl_corner_radius">تقوس الزاوية</string>
+    <string name="customctrl_stroke_width">عرض الخط</string>
+    <string name="customctrl_stroke_color">لون الخط</string>
+    <string name="customctrl_button_opacity">شفافية الزر</string>
+    <string name="customctrl_addbutton">إضافة زر</string>
+    <string name="customctrl_addbutton_drawer">اضافة زر بعدة ازرار</string>
+    <string name="customctrl_addsubbutton">إضافة زر فرعي</string>
+    <string name="main_share_logs">مشاركة ملف السجل</string>
+    <string name="main_play">إبدأ اللعب</string>
+    <string name="autoram_info_msg">تم تعيين الذاكرة إلى %d ميغابايت</string>
+    <string name="mcl_setting_check_libraries">التحقق من المكتبات بعد التحميل</string>
+    <string name="dl_library_sha_fail">المكتبة %s تالفة وسيتم إعادة تحميلها</string>
+    <string name="dl_library_sha_unknown">لا يمكن التحقق من الملفات المكتبية %s ، يجب أن تفترض أنها جيدة</string>
+    <string name="dl_library_sha_pass">المكتبة %s جيدة وقابلة للاستخدام</string>
+    <string name="mcl_disable_gestures">تعطيل الإيماءات</string>
+    <string name="mcl_disable_gestures_subtitle">تعطيل الإيماءات، مثل تثبيت الضغط لكسر كتلة، والنقر لوضع كتلة.</string>
+    <string name="mcl_disable_swap_hand">تعطيل الضغط مرتين لتبديل اليدين</string>
+    <string name="mcl_setting_title_mousespeed">سرعة الفأرة</string>
+    <string name="customctrl_passthru">سماح تحريك أزرار الشاشة</string>
+    <string name="customctrl_swipeable">قابل للسحب</string>
+    <string name="memory_warning_msg">الكمية الحالية من ذاكرة الوصول العشوائي المجانية (%d) أقل من ذاكرة الوصول العشوائي المحددة (%d)، مما قد يؤدي إلى حدوث أعطال. قم بتغيير التخصيص إذا تحطمت اللعبة.</string>
+    <string name="mcl_memory_allocation">تخصيص الذاكرة.</string>
+    <string name="multirt_runtime_corrupt">مشغل جافا فاسد</string>
+    <string name="multirt_runtime_incompatiblearch">بنية غير متوافقة: %s</string>
+    <string name="multirt_config_add">أضف واحدًا جديدا</string>
+    <string name="multirt_title">مدير مشغلات الجافا</string>
+    <string name="multirt_progress_caching">تخزين اامعلومات...</string>
+    <string name="multirt_config_setdefault">تعيين لإستخدام دائم</string>
+    <string name="multirt_config_setdefault_already">مستخدم دائما</string>
+    <string name="multirt_nocompartiblert">لا يمكن العثور على أي اصدار جافا صالح. هذا الإصدار يتطلب جافا %d أو أحدث.</string>
+    <string name="multirt_nojava8rt">لا يمكن العثور على Java 8. لاستخدام هذا الخيار، تحتاج إلى تثبيت Java 8.</string>
+    <string name="multirt_delete_runtime">حذف runtime</string>
+    <string name="pvc_gameDirectory">مكان تخزين اللعبة</string>
+    <string name="pvc_jvmArgs">مدخلات JVM</string>
+    <string name="preference_mouse_start_title">البَدْء بالفأرة الافتراضية مشغله</string>
+    <string name="preference_video_title">الفيديو والعرض</string>
+    <string name="preference_control_title">تخصيص التحكم</string>
+    <string name="preference_java_title">تعديلات جافا</string>
+    <string name="preference_misc_title">أعدادات متنوعة</string>
+    <string name="preference_experimental_title">أشياء تجريبيه</string>
+    <string name="preference_sustained_performance_title">تمكين وضع الأداء المستقر</string>
+    <string name="preference_edit_controls_title">تعديل التحكم</string>
+    <string name="preference_category_virtual_mouse">الفأرة الافتراضية</string>
+    <string name="preference_gyro_invert_x_axis">عكس محور س</string>
+    <string name="preference_gyro_invert_y_axis">عكس محور ص</string>
+    <string name="preference_back_title">العودة إلى الشاشة الأخيرة</string>
+    <string name="unnamed">بلا اسم</string>
+    <string name="profiles_latest_snapshot">أحدث اصدار تجريبي</string>
+    <string name="profiles_latest_release">أحدث إصدار</string>
+    <string name="profiles_profile_name">الاسم</string>
+    <string name="profiles_profile_version">الإصدار</string>
+    <string name="global_delete">حذف</string>
+    <string name="pedit_java_runtime">Java Runtime</string>
+    <string name="pedit_renderer">العارض</string>
+    <string name="arc_capes_title">Cosmetica Capes</string>
+    <string name="arc_capes_desc">يفعل أوشحه من Cosmetica, (المعروفة مسبقًا ب Arc). لمزيد من المعلومات، يرجى زيارة https://cosmetica.cc, يتطلب Optifine لكي يعمل.</string>
+    <string name="notif_channel_name">عام</string>
+    <string name="lazy_service_default_title">خدمة Pojav في المقدمة</string>
+    <string name="mcl_setting_veroption_installed">مثبت</string>
+    <string name="use_global_default">استخدم الافتراضي الشامل</string>
+    <string name="progresslayout_tasks_in_progress">%d مهام قيد التنفيذ</string>
+    <string name="notification_terminate">إنهاء</string>
+    <string name="notification_game_runs">اللعبة قيد التشغيل!</string>
+    <string name="folder_dialog_create">إنشاء</string>
+    <string name="folder_dialog_insert_name">إدراج اسم المجلد</string>
+    <string name="folder_fragment_create">إنشاء مجلد</string>
+    <string name="main_login_done">تم تسجيل الدخول</string>
+    <string name="main_add_account">أضف حساباً</string>
+    <string name="tasks_ongoing">المهام قيد التقدم، يرجى الانتظار</string>
+    <string name="no_saved_accounts">لا توجد حسابات محفوظة</string>
+    <string name="mc_download_failed">فشل تنزيل Minecraft! قد يكون ذلك بسبب سوء اتصال الشبكة، الملفات التي تم وضعها بشكل خاطئ، الخ..</string>
+    <string name="xerr_unknown">خطأ Xbox Live API غير معروف %d</string>
+    <string name="xerr_no_account">لا يبدو أن لديك حساب Xbox Live. الرجاء تسجيل الدخول مرة واحدة على https://minecraft.net/ وحاول مرة أخرى.</string>
+    <string name="xerr_adult_verification">يحتاج الشخص البالغ إلى التحقق من حسابك.</string>
+    <string name="xerr_child">حسابك هو حساب طفل، ويجب إضافته إلى العائلة لتسجيل الدخول.</string>
+    <string name="minecraft_not_owned">يبدو أن هذا الحساب ليس لديه ملف تعريف Minecraft. إذا كان لديك Xbox Game Pass، يرجى تسجيل الدخول على https://minecraft.net/ و إعداده.</string>
+    <string name="xerr_not_available">Xbox Live غير متوفر في بلدك</string>
+    <string name="preference_enable_gyro_title">تمكين التحكم بالغيروسكوب</string>
+    <string name="preference_gyro_sensitivity_title">حساسية التحكم في الغيروسكوب</string>
+    <string name="preference_gyro_sample_rate_title">معدل أخذ العينات من الجيرسكوب</string>
+    <string name="microsoft_login_retry_later">طلبات كثيرة جداً، الرجاء المحاولة مرة أخرى لاحقاً.</string>
+    <string name="create_profile">إنشاء ملف شخصي جديد</string>
+    <string name="preference_shader_dump_title">تمكين افراغ الشادر</string>
+    <string name="percent_format">%d%%</string>
+    <string name="customctrl_editor_exit_title">مغادرة؟</string>
+    <string name="customctrl_editor_exit_msg">هل أنت متأكد من أنك تريد الخروج؟</string>
+    <string name="customctrl_editor_exit">مغادرة المحرر</string>
+    <string name="global_save_and_exit">حفظ وخروج</string>
+    <string name="global_yes">نعم</string>
+    <string name="global_no">لا</string>
+    <string name="preference_category_controller_settings">إعدادات ذراع التحكم</string>
+    <string name="preference_wipe_controller_title">إعادة تعيين إعدادات ذراع التحكم</string>
+    <string name="preference_deadzone_scale_title">مقياس كمية تحرك عصا التحكم</string>
+    <string name="version_select_hint">إختر إصدار</string>
+    <string name="forge_dl_progress">تنزيل المثبت ل %s</string>
+    <string name="modloader_dl_failed_to_load_list">فشل تحميل قائمة الإصدارات!</string>
+    <string name="forge_dl_no_installer">عذراً، لكن هذا الإصدار من Forge لا يحتوي على مثبت، الذي لم يتم دعمه بعد.</string>
+    <string name="forge_dl_select_version">إختر إصدار Forge</string>
+    <string name="fabric_dl_game_version">إصدار Minecraft</string>
+    <string name="fabric_dl_install">تثبيت</string>
+    <string name="fabric_dl_loader_title">حدد إصدارات</string>
+    <string name="of_dl_progress">التحميل جارٍ %s</string>
+    <string name="generic_install">تثبيت</string>
+</resources>
