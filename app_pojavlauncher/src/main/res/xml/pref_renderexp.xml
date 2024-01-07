@@ -41,15 +41,15 @@
         android:key="radioGroupPref"
         android:title="RadioGroup Example">
 
-        <RadioButtonPreference
+        <SwitchPreference
             android:key="option1"
             android:title="Option1" />
 
-        <RadioButtonPreference
+        <SwitchPreference
             android:key="option2"
             android:title="Option2" />
 
-        <RadioButtonPreference
+        <SwitchPreference
             android:key="option3"
             android:title="Option3" />
 
