@@ -19,10 +19,11 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         computeVisibility();
 
         // Get RadioGroup Preference
-        final PreferenceCategory radioGroupPref = (PreferenceCategory) findPreference("radioGroupPref");
+        final PreferenceCategory radioGroupPref = findPreference("radioGroupPref");
         // Adding a Listener for an Option in a RadioGroup
         for (int i =0; i < radioGroupPref.getPreferenceCount(); i++) {
-            radioGroupPref.getPreference(i).setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            final Preference preference = radioGroupPref.getPreference(i);
+            preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     // Set Selected Status
