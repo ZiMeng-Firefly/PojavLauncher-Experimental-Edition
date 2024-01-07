@@ -415,6 +415,7 @@
     <string name="preference_category_renderer_experimental_settings">renderer exp setup</string>
     <string name="preference_renderer_setup_title">Enable Renderer Exp Setup</string>
     <string name="preference_renderer_setup">experimental setup for the Mesa</string>
+    <string name="preference_renderer_setup_extra">Experimental Settings</string>
     <string name="preference_renderer_setup_default">Use default configuration</string>
     <string name="preference_renderer_setup_second">Mesa23.0.4(Zink)</string>
     <string name="preference_renderer_setup_vwl">lwarlip(Zink Mesa21.0.3)</string>

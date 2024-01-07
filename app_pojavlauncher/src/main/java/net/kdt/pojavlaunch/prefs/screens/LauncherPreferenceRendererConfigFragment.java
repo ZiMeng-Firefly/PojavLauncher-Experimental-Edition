@@ -3,6 +3,8 @@ package net.kdt.pojavlaunch.prefs.screens;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.preference.*;
+
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.prefs.LauncherPreferences;
 
@@ -13,6 +15,38 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
     public void onCreatePreferences(Bundle b, String str) {
         addPreferencesFromResource(R.xml.pref_renderexp);
         computeVisibility();
+
+        // Get RadioGroup Preference
+        final PreferenceCategory radioGroupPref = findPreference("radioGroupPref");
+        // Adding a Listener for an Option in a RadioGroup
+        for (int i = 0; i < radioGroupPref.getPreferenceCount(); i++) {
+            final Preference preference = radioGroupPref.getPreference(i);
+            preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    // Set Selected Status
+                    for (int i = 0; i < radioGroupPref.getPreferenceCount(); i++) {
+                        ((SwitchPreference) radioGroupPref.getPreference(i)).setChecked(false);
+                    }
+                    ((SwitchPreference) preference).setChecked(true);
+                    // Perform the appropriate action
+                    if (preference.getKey().equals("ZinkF")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("ZinkS")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("VulkanLwarlip")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("Rvirpipe")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("Rpanfrost")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("Rfreedreno")) {
+                        // Nothing to do here
+                    }
+                    return true;
+                }
+            });
+        }
     }
 
     @Override
