@@ -36,4 +36,22 @@
             android:title="@string/preference_zink_crash_handle_title"/>
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="radioGroupPref"
+        android:title="RadioGroup Example">
+
+        <RadioButtonPreference
+            android:key="option1"
+            android:title="Option1" />
+
+        <RadioButtonPreference
+            android:key="option2"
+            android:title="Option2" />
+
+        <RadioButtonPreference
+            android:key="option3"
+            android:title="Option3" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
