@@ -3,9 +3,7 @@ package net.kdt.pojavlaunch.prefs.screens;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.*;
 
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.prefs.LauncherPreferences;
@@ -21,16 +19,16 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         // Get RadioGroup Preference
         final PreferenceCategory radioGroupPref = findPreference("radioGroupPref");
         // Adding a Listener for an Option in a RadioGroup
-        for (int i =0; i < radioGroupPref.getPreferenceCount(); i++) {
+        for (int i = 0; i < radioGroupPref.getPreferenceCount(); i++) {
             final Preference preference = radioGroupPref.getPreference(i);
             preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     // Set Selected Status
-                    for (int i =0; i < radioGroupPref.getPreferenceCount(); i++) {
-                        radioGroupPref.getPreference(i).setChecked(false);
+                    for (int i = 0; i < radioGroupPref.getPreferenceCount(); i++) {
+                        ((SwitchPreference) radioGroupPref.getPreference(i)).setChecked(false);
                     }
-                    preference.setChecked(true);
+                    ((SwitchPreference) preference).setChecked(true);
                     // Perform the appropriate action
                     if (preference.getKey().equals("option1")) {
                         // Perform the operation of option one
