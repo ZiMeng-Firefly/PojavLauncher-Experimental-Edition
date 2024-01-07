@@ -372,7 +372,8 @@
     <string name="preference_rendererexp_title">渲染器实验性设置</string>
     <string name="preference_rendererexp_description">针对于Mesa的实验性设置</string>
     <string name="preference_category_renderer_experimental_settings">渲染器实验性设置</string>
-    <string name="preference_renderer_setup_title">启用渲染器试验性设置</string>
+    <string name="preference_renderer_setup_title">启用渲染器实验性设置</string>
     <string name="preference_renderer_setup">针对于Mesa的实验性设置</string>
+    <string name="preference_renderer_setup_extra">实验性设置(Extra)</string>
     <string name="preference_renderer_setup_default">使用默认配置</string>
 </resources>
