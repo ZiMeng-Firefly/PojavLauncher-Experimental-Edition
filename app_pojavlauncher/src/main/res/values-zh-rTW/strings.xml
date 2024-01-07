@@ -240,5 +240,6 @@
     <string name="preference_category_renderer_experimental_settings">渲染器實驗性設置</string>
     <string name="preference_renderer_setup_title">使用渲染器實驗性設置</string>
     <string name="preference_renderer_setup">針對於Mesa的實驗性設置</string>
+    <string name="preference_renderer_setup_extra">實驗性設置(Extra)</string>
     <string name="preference_renderer_setup_default">使用默認配置</string>
 </resources>
