@@ -3,6 +3,10 @@ package net.kdt.pojavlaunch.prefs.screens;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceFragmentCompat;
+
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.prefs.LauncherPreferences;
 
