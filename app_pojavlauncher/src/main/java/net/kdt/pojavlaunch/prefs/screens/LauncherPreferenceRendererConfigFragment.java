@@ -30,12 +30,18 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                     }
                     ((SwitchPreference) preference).setChecked(true);
                     // Perform the appropriate action
-                    if (preference.getKey().equals("option1")) {
-                        // Perform the operation of option one
-                    } else if (preference.getKey().equals("option2")) {
-                        // Perform the operation of option 2
-                    } else if (preference.getKey().equals("option3")) {
-                        // Perform the operation of option three
+                    if (preference.getKey().equals("ZinkF")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("ZinkS")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("VulkanLwarlip")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("Rvirpipe")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("Rpanfrost")) {
+                        // Nothing to do here
+                    } else if (preference.getKey().equals("Rfreedreno")) {
+                        // Nothing to do here
                     }
                     return true;
                 }
