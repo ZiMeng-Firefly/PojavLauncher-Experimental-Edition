@@ -20,7 +20,7 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         addPreferencesFromResource(R.xml.pref_renderexp);
         computeVisibility();
 
-        if (PREF_EXP_SETUP) {
+        if (s.equals("ExperimentalSetup")) {
             showPopupDialogWithRandomCharacter();
         }
 
