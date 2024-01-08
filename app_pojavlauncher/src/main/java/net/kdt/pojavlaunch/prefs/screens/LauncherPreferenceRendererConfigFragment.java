@@ -32,17 +32,17 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                     ((SwitchPreference) preference).setChecked(true);
                     // Perform the appropriate action
                     if (preference.getKey().equals("ZinkF")) {
-                        Toast.makeText(this, "Default", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Default", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("ZinkS")) {
-                        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("VulkanLwarlip")) {
-                        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rvirpipe")) {
-                        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rpanfrost")) {
-                        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rfreedreno")) {
-                        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
                     }
                     return true;
                 }
