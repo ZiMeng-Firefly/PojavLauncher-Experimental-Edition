@@ -2,7 +2,6 @@ package net.kdt.pojavlaunch.prefs.screens;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.*;
 import android.widget.Toast;
 
 import androidx.preference.*;
@@ -33,17 +32,17 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                     ((SwitchPreference) preference).setChecked(true);
                     // Perform the appropriate action
                     if (preference.getKey().equals("ZinkF")) {
-                        Toast.makeText(view.getContext(), "Default", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Default", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("ZinkS")) {
-                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("VulkanLwarlip")) {
-                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rvirpipe")) {
-                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rpanfrost")) {
-                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rfreedreno")) {
-                        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show();
                     }
                     return true;
                 }
