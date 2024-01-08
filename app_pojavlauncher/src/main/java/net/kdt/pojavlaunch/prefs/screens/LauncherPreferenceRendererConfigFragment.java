@@ -20,10 +20,6 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         addPreferencesFromResource(R.xml.pref_renderexp);
         computeVisibility();
 
-        if (s.equals("ExperimentalSetup")) {
-            showPopupDialogWithRandomCharacter();
-        }
-
         // Get RadioGroup Preference
         final PreferenceCategory radioGroupPref = findPreference("radioGroupPref");
         // Adding a Listener for an Option in a RadioGroup
@@ -61,6 +57,9 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
     public void onSharedPreferenceChanged(SharedPreferences p, String s) {
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
+        if (s.equals("ExperimentalSetup")) {
+            showPopupDialogWithRandomCharacter();
+        }
     }
 
     private void computeVisibility(){
