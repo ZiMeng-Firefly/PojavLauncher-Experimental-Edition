@@ -34,15 +34,7 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                     ((SwitchPreference) preference).setChecked(true);
                     // Perform the appropriate action
                     if (preference.getKey().equals("ZinkF")) {
-                        ((SwitchPreference) preference).setOnPreferenceLongClickListener(new Preference.OnPreferenceLongClickListener() {
-                            @Override
-                            public boolean onPreferenceLongClick(Preference preference) {
-                                if (preference.getKey().equals("ZinkF")) {
-                                    showPopupDialogWithRandomCharacter();
-                                }
-                                return true;
-                            }
-                        });
+                        // Nothing to do here
                     } else if (preference.getKey().equals("ZinkS")) {
                         // Nothing to do here
                     } else if (preference.getKey().equals("VulkanLwarlip")) {
@@ -58,6 +50,16 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                 }
             });
         }
+
+        ((SwitchPreference) preference).setOnPreferenceLongClickListener(new Preference.OnPreferenceLongClickListener() {
+            @Override
+            public boolean onPreferenceLongClick(Preference preference) {
+                if (preference.getKey().equals("ZinkF")) {
+                    showPopupDialogWithRandomCharacter();
+                }
+                return true;
+            }
+        });
     }
 
     @Override
