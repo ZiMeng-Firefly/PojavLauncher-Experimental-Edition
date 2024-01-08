@@ -2,6 +2,7 @@ package net.kdt.pojavlaunch.prefs.screens;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.*;
 import android.widget.Toast;
 
 import androidx.preference.*;
