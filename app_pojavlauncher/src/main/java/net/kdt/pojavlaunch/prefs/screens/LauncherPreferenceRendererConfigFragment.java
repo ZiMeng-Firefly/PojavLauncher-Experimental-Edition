@@ -20,10 +20,8 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         addPreferencesFromResource(R.xml.pref_renderexp);
         computeVisibility();
 
-        if (preference != null) {
-            if (preference.getKey().equals("ExperimentalSetup")) {
-                showPopupDialogWithRandomCharacter();
-            }
+        if (PREF_EXP_SETUP) {
+            showPopupDialogWithRandomCharacter();
         }
 
         // Get RadioGroup Preference
