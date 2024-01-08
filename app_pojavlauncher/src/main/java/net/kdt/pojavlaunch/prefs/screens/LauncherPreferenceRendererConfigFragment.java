@@ -73,24 +73,25 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
     }
 
     private void showPopupDialogWithRandomCharacter() {
-        //生成3个字符中的任意一个
+        //Generate any of 3 characters
         String[] characters = {"A", "B", "C"};
         Random random = new Random();
         int index = random.nextInt(characters.length);
         String randomCharacter = characters[index];
 
-        // 创建AlertDialog.Builder并设置弹窗内容
+        // Create AlertDialog. Builder and set popup content
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage("随机字符：" + randomCharacter);
+        builder.setMessage("anything：" + randomCharacter);
 
-        // 设置弹窗按钮
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+        // Set the pop-up window button
+        builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             @Override public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
             }
         });
 
-        // 创建并显示弹窗 AlertDialog dialog = builder.create();
+        // Create and display popup
+        AlertDialog dialog = builder.create();
         dialog.show();
     }
 }
