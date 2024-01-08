@@ -32,17 +32,17 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                     ((SwitchPreference) preference).setChecked(true);
                     // Perform the appropriate action
                     if (preference.getKey().equals("ZinkF")) {
-                        Toast.makeText(getContext(), "Default", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_default, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("ZinkS")) {
-                        Toast.makeText(getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_zinks, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("VulkanLwarlip")) {
-                        Toast.makeText(getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_zinkt, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rvirpipe")) {
-                        Toast.makeText(getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_virgl, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rpanfrost")) {
-                        Toast.makeText(getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_pan, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rfreedreno")) {
-                        Toast.makeText(getContext(), "Test", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_fd, Toast.LENGTH_SHORT).show();
                     }
                     return true;
                 }
