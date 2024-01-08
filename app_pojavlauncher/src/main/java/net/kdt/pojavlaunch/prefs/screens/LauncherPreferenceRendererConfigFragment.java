@@ -58,7 +58,12 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
         if (s.equals("ExperimentalSetup")) {
-            showPopupDialogWithRandomCharacter();
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle("Warning");
+            builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
+            builder.setPositiveButton("Fuck", null);
+            builder.setNegativeButton("Fear", null);
+            builder.show();
         }
     }
 
