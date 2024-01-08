@@ -1,10 +1,13 @@
 package net.kdt.pojavlaunch.prefs.screens;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.*;
 
+import java.util.Random;
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.prefs.LauncherPreferences;
 
@@ -31,7 +34,15 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                     ((SwitchPreference) preference).setChecked(true);
                     // Perform the appropriate action
                     if (preference.getKey().equals("ZinkF")) {
-                        // Nothing to do here
+                        ((SwitchPreference) preference).setOnPreferenceLongClickListener(new Preference.OnPreferenceLongClickListener() {
+                            @Override
+                            public boolean onPreferenceLongClick(Preference preference) {
+                                if (preference.getKey().equals("ZinkF")) {
+                                    showPopupDialogWithRandomCharacter();
+                                }
+                                return true;
+                            }
+                        });
                     } else if (preference.getKey().equals("ZinkS")) {
                         // Nothing to do here
                     } else if (preference.getKey().equals("VulkanLwarlip")) {
@@ -62,5 +73,23 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         requirePreference("Rvirpipe").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rpanfrost").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rfreedreno").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+    }
+
+    private void showPopupDialogWithRandomCharacter() {
+        String[] characters = {"A", "B", "C"};
+        Random random = new Random();
+        int index = random.nextInt(characters.length);
+        String randomCharacter = characters[index];
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage("随机字符：" + randomCharacter);
+
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
