@@ -1,11 +1,14 @@
 package net.kdt.pojavlaunch.prefs.screens;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.*;
 
+import java.util.Random;
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.prefs.LauncherPreferences;
 
@@ -16,6 +19,10 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
     public void onCreatePreferences(Bundle b, String str) {
         addPreferencesFromResource(R.xml.pref_renderexp);
         computeVisibility();
+
+        if (preference.getKey().equals("ZinkF")) {
+            showPopupDialogWithRandomCharacter();
+        }
 
         // Get RadioGroup Preference
         final PreferenceCategory radioGroupPref = findPreference("radioGroupPref");
@@ -63,5 +70,27 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         requirePreference("Rvirpipe").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rpanfrost").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rfreedreno").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+    }
+
+    private void showPopupDialogWithRandomCharacter() {
+        //生成3个字符中的任意一个
+        String[] characters = {"A", "B", "C"};
+        Random random = new Random();
+        int index = random.nextInt(characters.length);
+        String randomCharacter = characters[index];
+
+        // 创建AlertDialog.Builder并设置弹窗内容
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage("随机字符：" + randomCharacter);
+
+        // 设置弹窗按钮
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        // 创建并显示弹窗 AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
