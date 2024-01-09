@@ -408,10 +408,6 @@
     <string name="other_login_external">External Landing</string>
     <string name="other_login_server_error">No authentication server</string>
     <!-- Renderer Experimental Setup -->
-    <string name="preference_rendererexp_alertdialog_warning">Warning</string>
-    <string name="preference_rendererexp_alertdialog_message">You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?</string>
-    <string name="preference_rendererexp_alertdialog_done">Fuck</string>
-    <string name="preference_rendererexp_alertdialog_cancel">Fear</string>
     <string name="preference_rendererexp_title">Renderer Experimental Settings</string>
     <string name="preference_rendererexp_description">Experimental setup for Mesa</string>
     <string name="preference_category_renderer_experimental_settings">renderer exp setup</string>
@@ -431,4 +427,13 @@
     <string name="mcl_setting_renderer_virgl">Virglrenderer Mesa22.1.2</string>
     <string name="mcl_setting_renderer_pan">Panfrost (Mali)</string>
     <string name="mcl_setting_renderer_fd">Freedreno (Adreno)</string>
+    <!-- Dialog box prompt -->
+    <string name="preference_rendererexp_alertdialog_warning">Warning</string>
+    <string name="preference_rendererexp_alertdialog_message">You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?</string>
+    <string name="preference_rendererexp_alertdialog_done">Fuck</string>
+    <string name="preference_rendererexp_alertdialog_cancel">Fear</string>
+    <string name="preference_alertdialog_know">already know</string>
+    <string name="alertdialog_tipa">Don\'t forget to select the Mesa renderer</string>
+    <string name="alertdialog_tipb">This experimental setting only works for the Mesa renderer</string>
+    <string name="alertdialog_tipc">Remember to check if your device supports these features before using them</string>
 </resources>

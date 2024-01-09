@@ -67,7 +67,12 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle(getString(R.string.preference_rendererexp_alertdialog_warning));
                 builder.setMessage(getString(R.string.preference_rendererexp_alertdialog_message));
-                builder.setPositiveButton(getString(R.string.preference_rendererexp_alertdialog_done), null);
+                builder.setPositiveButton(getString(R.string.preference_rendererexp_alertdialog_done), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        showPopupDialogWithRandomCharacter();
+                    }
+                });
                 builder.setNegativeButton(getString(R.string.preference_rendererexp_alertdialog_cancel), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -94,18 +99,22 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
 
     // Extra popup
     private void showPopupDialogWithRandomCharacter() {
-        //Generate any of 3 characters
-        String[] characters = {"A", "B", "C"};
+        //Generate any of there characters
+        String[] characters = {
+        getString(R.string.alertdialog_tipa),
+        getString(R.string.alertdialog_tipb),
+        getString(R.string.alertdialog_tipc)
+        };
         Random random = new Random();
         int index = random.nextInt(characters.length);
         String randomCharacter = characters[index];
 
         // Create AlertDialog. Builder and set popup content
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage("anything：" + randomCharacter);
+        builder.setMessage("Tip:" + randomCharacter);
 
         // Set the pop-up window button
-        builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.preference_alertdialog_know), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
