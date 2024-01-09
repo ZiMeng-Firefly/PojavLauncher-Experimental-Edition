@@ -64,11 +64,11 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                 boolean isChecked = PreferenceManager.getDefaultSharedPreferences(getContext())
                 .getBoolean("ExperimentalSetup", false);
                 if (isChecked) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                    builder.setTitle("Warning");
-                    builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
-                    builder.setPositiveButton("Fuck", null);
-                    builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext())
+                    .setTitle("Warning");
+                    .setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
+                    .setPositiveButton("Fuck", null);
+                    .setNegativeButton("Fear", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             experimentalSetUpPreference.setChecked(false);
@@ -77,7 +77,6 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                             editor.apply();
                         }
                     });
-                    AlertDialog dialog = builder.create();
                     builder.create().show();
                 }
             }
