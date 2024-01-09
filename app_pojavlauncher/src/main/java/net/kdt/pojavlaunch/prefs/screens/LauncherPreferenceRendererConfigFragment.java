@@ -57,15 +57,6 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
     public void onSharedPreferenceChanged(SharedPreferences p, String s) {
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
-    }
-
-    private void computeVisibility(){
-        requirePreference("ZinkF").setVisible(LauncherPreferences.PREF_EXP_SETUP);
-        requirePreference("ZinkS").setVisible(LauncherPreferences.PREF_EXP_SETUP);
-        requirePreference("VulkanLwarlip").setVisible(LauncherPreferences.PREF_EXP_SETUP);
-        requirePreference("Rvirpipe").setVisible(LauncherPreferences.PREF_EXP_SETUP);
-        requirePreference("Rpanfrost").setVisible(LauncherPreferences.PREF_EXP_SETUP);
-        requirePreference("Rfreedreno").setVisible(LauncherPreferences.PREF_EXP_SETUP);
 
         Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
         boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
@@ -87,6 +78,15 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
             AlertDialog dialog = builder.create();
             builder.show();
         }
+    }
+
+    private void computeVisibility(){
+        requirePreference("ZinkF").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("ZinkS").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("VulkanLwarlip").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("Rvirpipe").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("Rpanfrost").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+        requirePreference("Rfreedreno").setVisible(LauncherPreferences.PREF_EXP_SETUP);
     }
 
     private void showPopupDialogWithRandomCharacter() {
