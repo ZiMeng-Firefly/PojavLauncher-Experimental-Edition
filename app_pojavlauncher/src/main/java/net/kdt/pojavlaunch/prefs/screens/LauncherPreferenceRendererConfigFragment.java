@@ -58,21 +58,26 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
 
-        if (p.getBoolean("ExperimentalSetup", true)) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setTitle("Warning");
-            builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
-            builder.setPositiveButton("Fuck", null);
-            builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    SharedPreferences.Editor editor = p.edit();
-                    editor.putBoolean("ExperimentalSetup", false);
-                    editor.apply();
-                }
-            });
-            AlertDialog dialog = builder.create();
-            builder.show();
+        Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
+        boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
+
+        if (getKey().equals("ExperimentalSetup")) {
+            if (isExperimentalSetUpEnabled) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Warning");
+                builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
+                builder.setPositiveButton("Fuck", null);
+                builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences.Editor editor = p.edit();
+                        editor.putBoolean("ExperimentalSetup", false);
+                        editor.apply();
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                builder.show();
+            }
         }
     }
 
