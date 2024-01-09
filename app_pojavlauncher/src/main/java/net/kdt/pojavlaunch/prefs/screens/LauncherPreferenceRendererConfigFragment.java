@@ -58,24 +58,26 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
 
-        Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
-        boolean isExperimentalSetUpEnabled = s.getBoolean("ExperimentalSetup", false);
+        if (s.equals("ExperimentalSetup")) {
+            Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
+            boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
 
-        if (isExperimentalSetUpEnabled) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setTitle("Warning");
-            builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
-            builder.setPositiveButton("Fuck", null);
-            builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    SharedPreferences.Editor editor = s.edit();
-                    editor.putBoolean("ExperimentalSetup", false);
-                    editor.apply();
-                }
-            });
-            AlertDialog dialog = builder.create();
-            builder.show();
+            if (isExperimentalSetUpEnabled) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Warning");
+                builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
+                builder.setPositiveButton("Fuck", null);
+                builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences.Editor editor = p.edit();
+                        editor.putBoolean("ExperimentalSetup", false);
+                        editor.apply();
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                builder.show();
+            }
         }
     }
 
