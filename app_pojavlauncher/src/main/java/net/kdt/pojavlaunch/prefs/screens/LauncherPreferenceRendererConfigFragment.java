@@ -70,7 +70,7 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                 builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        s.equals("ExperimentalSetup").setChecked(false);
+                        getKey().equals("ExperimentalSetup").setChecked(false);
                         SharedPreferences.Editor editor = p.edit();
                         editor.putBoolean("ExperimentalSetup", false);
                         editor.apply();
