@@ -1,10 +1,14 @@
 package net.kdt.pojavlaunch.prefs.screens;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.*;
 
+import java.util.Random;
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.prefs.LauncherPreferences;
 
@@ -31,17 +35,17 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                     ((SwitchPreference) preference).setChecked(true);
                     // Perform the appropriate action
                     if (preference.getKey().equals("ZinkF")) {
-                        // Nothing to do here
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_default, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("ZinkS")) {
-                        // Nothing to do here
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_zinks, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("VulkanLwarlip")) {
-                        // Nothing to do here
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_zinkt, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rvirpipe")) {
-                        // Nothing to do here
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_virgl, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rpanfrost")) {
-                        // Nothing to do here
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_pan, Toast.LENGTH_SHORT).show();
                     } else if (preference.getKey().equals("Rfreedreno")) {
-                        // Nothing to do here
+                        Toast.makeText(getContext(), R.string.mcl_setting_renderer_fd, Toast.LENGTH_SHORT).show();
                     }
                     return true;
                 }
@@ -53,6 +57,28 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
     public void onSharedPreferenceChanged(SharedPreferences p, String s) {
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
+
+        if (s.equals("ExperimentalSetup")) {
+            Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
+            boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
+
+            if (isExperimentalSetUpEnabled) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Warning");
+                builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
+                builder.setPositiveButton("Fuck", null);
+                builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        SharedPreferences.Editor editor = p.edit();
+                        editor.putBoolean("ExperimentalSetup", false);
+                        editor.apply();
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                builder.show();
+            }
+        }
     }
 
     private void computeVisibility(){
@@ -62,5 +88,29 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         requirePreference("Rvirpipe").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rpanfrost").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rfreedreno").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+    }
+
+    private void showPopupDialogWithRandomCharacter() {
+        //Generate any of 3 characters
+        String[] characters = {"A", "B", "C"};
+        Random random = new Random();
+        int index = random.nextInt(characters.length);
+        String randomCharacter = characters[index];
+
+        // Create AlertDialog. Builder and set popup content
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage("anything：" + randomCharacter);
+
+        // Set the pop-up window button
+        builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+
+        // Create and display popup
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
