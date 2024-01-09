@@ -58,11 +58,7 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
 
-        Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
-        boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
-        experimentalSetUpPreference.setVisible(LauncherPreferences.PREF_EXP_SETUP);
-
-        if (isExperimentalSetUpEnabled) {
+        if (p.getBoolean("ExperimentalSetup", true)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             builder.setTitle("Warning");
             builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
