@@ -57,14 +57,6 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
     public void onSharedPreferenceChanged(SharedPreferences p, String s) {
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
-        if (s.equals("ExperimentalSetup")) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setTitle("Warning");
-            builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
-            builder.setPositiveButton("Fuck", null);
-            builder.setNegativeButton("Fear", null);
-            builder.show();
-        }
     }
 
     private void computeVisibility(){
@@ -74,6 +66,27 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         requirePreference("Rvirpipe").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rpanfrost").setVisible(LauncherPreferences.PREF_EXP_SETUP);
         requirePreference("Rfreedreno").setVisible(LauncherPreferences.PREF_EXP_SETUP);
+
+        Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
+        boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
+        experimentalSetUpPreference.setVisible(LauncherPreferences.PREF_EXP_SETUP);
+
+        if (isExperimentalSetUpEnabled) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle("Warning");
+            builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
+            builder.setPositiveButton("Fuck", null);
+            builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    SharedPreferences.Editor editor = p.edit();
+                    editor.putBoolean("ExperimentalSetup", false);
+                    editor.apply();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            builder.show();
+        }
     }
 
     private void showPopupDialogWithRandomCharacter() {
@@ -89,7 +102,8 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
 
         // Set the pop-up window button
         builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
-            @Override public void onClick(DialogInterface dialogInterface, int i) {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
             }
         });
