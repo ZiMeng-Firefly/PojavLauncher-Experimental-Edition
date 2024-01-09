@@ -380,9 +380,7 @@
     <string name="preference_category_local_account_title">Local account</string>
     <string name="preference_category_custom_path">Custom path</string>
     <string name="app_start_toast">#Welcome to Pojav EXP!!!!</string>
-    <string name="mcl_setting_renderer_vulkan_warlip">Zink (Mesa21.0.3) - (all versions,very slow., low device compat)</string>
     <string name="mcl_setting_renderer_vgpu">vgpu - (up to 1.16.5, fast)</string>
-    <string name="mcl_setting_renderer_virgl">virglrenderer - (release 1.7+, slow)</string>
     <string name="preference_mouse_title">Mouce customization</string>
     <string name="preference_mouse_description">Set mouse pointer icon in game</string>
     <string name="notif_mouse">Set done.</string>
@@ -410,6 +408,10 @@
     <string name="other_login_external">External Landing</string>
     <string name="other_login_server_error">No authentication server</string>
     <!-- Renderer Experimental Setup -->
+    <string name="preference_rendererexp_alertdialog_warning">Warning</string>
+    <string name="preference_rendererexp_alertdialog_message">You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?</string>
+    <string name="preference_rendererexp_alertdialog_done">Fuck</string>
+    <string name="preference_rendererexp_alertdialog_cancel">Fear</string>
     <string name="preference_rendererexp_title">Renderer Experimental Settings</string>
     <string name="preference_rendererexp_description">Experimental setup for Mesa</string>
     <string name="preference_category_renderer_experimental_settings">renderer exp setup</string>
@@ -422,4 +424,11 @@
     <string name="preference_renderer_setup_rvir">virpipe(Virgl)</string>
     <string name="preference_renderer_setup_rpan">Panfrost</string>
     <string name="preference_renderer_setup_freedreno">Freedreno</string>
+    <!-- Renderer Extra Config -->
+    <string name="mcl_setting_renderer_default">Zink Mesa24.0.0 (Vulkan)</string>
+    <string name="mcl_setting_renderer_zinks">Zink Mesa23.0.4 (Vulkan)</string>
+    <string name="mcl_setting_renderer_zinkt">Zink Mesa21.0.3 (Vulkan)</string>
+    <string name="mcl_setting_renderer_virgl">Virglrenderer Mesa22.1.2</string>
+    <string name="mcl_setting_renderer_pan">Panfrost (Mali)</string>
+    <string name="mcl_setting_renderer_fd">Freedreno (Adreno)</string>
 </resources>
