@@ -61,7 +61,7 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
         boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
 
-        if (preference.getKey().equals("ExperimentalSetup")) {
+        if (((SwitchPreference) preference).getKey().equals("ExperimentalSetup")) {
             if (isExperimentalSetUpEnabled) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("Warning");
