@@ -12,7 +12,7 @@ import java.util.Random;
 import net.kdt.pojavlaunch.R;
 import net.kdt.pojavlaunch.prefs.LauncherPreferences;
 
-//Experimental Settings for Mesa renderer
+// Experimental Settings for Mesa renderer
 public class LauncherPreferenceRendererConfigFragment extends LauncherPreferenceFragment {
 
     @Override
@@ -58,16 +58,17 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
 
+        // Warning pops up when using experimental settings
         if (s.equals("ExperimentalSetup")) {
             Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
             boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
 
             if (isExperimentalSetUpEnabled) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Warning");
-                builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
-                builder.setPositiveButton("Fuck", null);
-                builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
+                builder.setTitle(getString(R.string.preference_rendererexp_alertdialog_warning));
+                builder.setMessage(getString(R.string.preference_rendererexp_alertdialog_message));
+                builder.setPositiveButton(getString(R.string.preference_rendererexp_alertdialog_done), null);
+                builder.setNegativeButton(getString(R.string.preference_rendererexp_alertdialog_cancel), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ((SwitchPreference) experimentalSetUpPreference).setChecked(false);
@@ -91,6 +92,7 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         requirePreference("Rfreedreno").setVisible(LauncherPreferences.PREF_EXP_SETUP);
     }
 
+    // Extra popup
     private void showPopupDialogWithRandomCharacter() {
         //Generate any of 3 characters
         String[] characters = {"A", "B", "C"};
