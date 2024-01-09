@@ -59,7 +59,7 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         computeVisibility();
 
         if (s.equals("ExperimentalSetup")) {
-            Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
+            Preference experimentalSetUpPreference = findPreference("ExperimentalSetup");
             boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
 
             if (isExperimentalSetUpEnabled) {
