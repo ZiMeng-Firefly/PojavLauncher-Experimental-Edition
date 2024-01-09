@@ -58,8 +58,8 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         super.onSharedPreferenceChanged(p, s);
         computeVisibility();
 
+        Preference experimentalSetUpPreference = findPreference("ExperimentalSetup");
         if (s.equals("ExperimentalSetup")) {
-            Preference experimentalSetUpPreference = findPreference("ExperimentalSetup");
             boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
 
             if (isExperimentalSetUpEnabled) {
