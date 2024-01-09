@@ -59,25 +59,27 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         computeVisibility();
 
         if (s.equals("ExperimentalSetup")) {
-            Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
-            boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
-
-            if (isExperimentalSetUpEnabled) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Warning");
-                builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
-                builder.setPositiveButton("Fuck", null);
-                builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        getKey().equals("ExperimentalSetup").setChecked(false);
-                        SharedPreferences.Editor editor = p.edit();
-                        editor.putBoolean("ExperimentalSetup", false);
-                        editor.apply();
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                builder.show();
+            Preference experimentalSetUpPreference = findPreference("ExperimentalSetup");
+            if (experimentalSetUpPreference != null) {
+                boolean isChecked = PreferenceManager.getDefaultSharedPreferences(getContext())
+                .getBoolean("ExperimentalSetup", false);
+                if (isChecked) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext())
+                    builder.setTitle("Warning");
+                    builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
+                    builder.setPositiveButton("Fuck", null);
+                    .setNegativeButton("Fear", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            experimentalSetUpPreference.setChecked(false);
+                            SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
+                            editor.putBoolean("ExperimentalSetup", false);
+                            editor.apply();
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    builder.create().show();
+                }
             }
         }
     }
