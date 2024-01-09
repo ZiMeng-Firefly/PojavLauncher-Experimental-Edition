@@ -59,25 +59,23 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         computeVisibility();
 
         Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
-        boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
+        boolean isExperimentalSetUpEnabled = s.getBoolean("ExperimentalSetup", false);
 
-        if (((SwitchPreference) preference).getKey().equals("ExperimentalSetup")) {
-            if (isExperimentalSetUpEnabled) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Warning");
-                builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
-                builder.setPositiveButton("Fuck", null);
-                builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        SharedPreferences.Editor editor = p.edit();
-                        editor.putBoolean("ExperimentalSetup", false);
-                        editor.apply();
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                builder.show();
-            }
+        if (isExperimentalSetUpEnabled) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle("Warning");
+            builder.setMessage("You have turned on experimental settings.This feature may generate unexpected bugs.Continue to use?");
+            builder.setPositiveButton("Fuck", null);
+            builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    SharedPreferences.Editor editor = s.edit();
+                    editor.putBoolean("ExperimentalSetup", false);
+                    editor.apply();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            builder.show();
         }
     }
 
