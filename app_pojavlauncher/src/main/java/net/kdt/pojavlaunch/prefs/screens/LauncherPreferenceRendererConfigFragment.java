@@ -61,7 +61,6 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
         if (s.equals("ExperimentalSetup")) {
             Preference experimentalSetUpPreference = requirePreference("ExperimentalSetup");
             boolean isExperimentalSetUpEnabled = p.getBoolean("ExperimentalSetup", false);
-            experimentalSetUpPreference.setVisible(LauncherPreferences.PREF_EXP_SETUP);
 
             if (isExperimentalSetUpEnabled) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -71,6 +70,7 @@ public class LauncherPreferenceRendererConfigFragment extends LauncherPreference
                 builder.setNegativeButton("Fear", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        experimentalSetUpPreference.setChecked(false);
                         SharedPreferences.Editor editor = p.edit();
                         editor.putBoolean("ExperimentalSetup", false);
                         editor.apply();
