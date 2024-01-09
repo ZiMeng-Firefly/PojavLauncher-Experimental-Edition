@@ -233,10 +233,6 @@
     <string name="other_login_external">外置登陸</string>
     <string name="other_login_server_error">无認證伺服器</string>
     <!-- Renderer Experimental Setup -->
-    <string name="preference_rendererexp_alertdialog_warning">警告</string>
-    <string name="preference_rendererexp_alertdialog_message">您已打開實驗性設置,此功能可能會產生意想不到的bug,是否繼續使用?</string>
-    <string name="preference_rendererexp_alertdialog_done">不要管我</string>
-    <string name="preference_rendererexp_alertdialog_cancel">畏懼</string>
     <string name="preference_rendererexp_title">渲染器實驗性設置</string>
     <string name="preference_rendererexp_description">針對於Mesa的實驗性設置</string>
     <string name="preference_category_renderer_experimental_settings">渲染器實驗性設置</string>
@@ -244,4 +240,13 @@
     <string name="preference_renderer_setup">針對於Mesa的實驗性設置</string>
     <string name="preference_renderer_setup_extra">實驗性設置(Extra)</string>
     <string name="preference_renderer_setup_default">使用默認配置</string>
+    <!-- Dialog box prompt -->
+    <string name="preference_rendererexp_alertdialog_warning">警告</string>
+    <string name="preference_rendererexp_alertdialog_message">您已打開實驗性設置,此功能可能會產生意想不到的bug,是否繼續使用?</string>
+    <string name="preference_rendererexp_alertdialog_done">不要管我</string>
+    <string name="preference_rendererexp_alertdialog_cancel">畏懼</string>
+    <string name="preference_alertdialog_know">我已知曉</string>
+    <string name="alertdialog_tipa">不要忘記選擇Mesa渲染器!</string>
+    <string name="alertdialog_tipb">該實驗性設置僅適用於Mesa渲染器</string>
+    <string name="alertdialog_tipc">在使用這些功能之前,請記得檢查你的設備是否支持這些功能!</string>
 </resources>
