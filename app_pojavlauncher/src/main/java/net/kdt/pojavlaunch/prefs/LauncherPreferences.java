@@ -70,6 +70,7 @@ public class LauncherPreferences {
     public static boolean PREF_EXP_SETUP_LW = false;
     public static boolean PREF_EXP_SETUP_VIRGL = false;
     public static boolean PREF_EXP_SETUP_PAN = false;
+    public static boolean PREF_EXP_SETUP_FD = false;
 
     public static boolean PREF_VERIFY_MANIFEST = true;
     public static String PREF_DOWNLOAD_SOURCE = "default";
@@ -128,6 +129,7 @@ public class LauncherPreferences {
         PREF_EXP_SETUP_LW  = DEFAULT_PREF.getBoolean("VulkanLwarlip", false);
         PREF_EXP_SETUP_VIRGL  = DEFAULT_PREF.getBoolean("Rvirpipe", false);
         PREF_EXP_SETUP_PAN  = DEFAULT_PREF.getBoolean("Rpanfrost", false);
+        PREF_EXP_SETUP_FD  = DEFAULT_PREF.getBoolean("Rfreedreno", false);
 
         String argLwjglLibname = "-Dorg.lwjgl.opengl.libname=";
         for (String arg : JREUtils.parseJavaArguments(PREF_CUSTOM_JAVA_ARGS)) {

@@ -10,6 +10,19 @@
             android:key="ExperimentalSetup"
             android:title="@string/preference_renderer_setup_title"
             android:summary="@string/preference_renderer_setup"/>
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="zinkCrashhandle"
+            android:summary="@string/preference_zink_crash_handle"
+            android:title="@string/preference_zink_crash_handle_title"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="radioGroupPref"
+        android:title="@string/preference_renderer_setup_extra">
+
         <SwitchPreference
             android:key="ZinkF"
             android:title="@string/preference_renderer_setup_default"/>
@@ -25,12 +38,9 @@
         <SwitchPreference
             android:key="Rpanfrost"
             android:title="@string/preference_renderer_setup_rpan"/>
-
         <SwitchPreference
-            android:defaultValue="false"
-            android:key="zinkCrashhandle"
-            android:summary="@string/preference_zink_crash_handle"
-            android:title="@string/preference_zink_crash_handle_title"/>
+            android:key="Rfreedreno"
+            android:title="@string/preference_renderer_setup_freedreno"/>
 
     </PreferenceCategory>
 </PreferenceScreen>

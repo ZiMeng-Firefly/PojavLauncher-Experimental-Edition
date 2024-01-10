@@ -14,6 +14,7 @@
 
 #include <EGL/egl.h>
 #include <GL/osmesa.h>
+#include "ctxbridges/egl_loader.h"
 #include "ctxbridges/osmesa_loader.h"
 #include "driver_helper/nsbypass.h"
 
@@ -58,8 +59,6 @@ struct PotatoBridge {
 EGLConfig config;
 struct PotatoBridge potatoBridge;
 
-#include "ctxbridges/egl_loader.h"
-#include "ctxbridges/osmesa_loader.h"
 int (*vtest_main_p) (int argc, char** argv);
 void (*vtest_swap_buffers_p) (void);
 void bigcore_set_affinity();
@@ -297,6 +296,20 @@ int pojavInitOpenGL() {
                 setenv("GALLIUM_DRIVER", "panfrost", 1);
                 setenv("PAN_DEBUG","gofaster", 0);
                 set_osm_bridge_tbl();
+            }
+            if(getenv("POJAV_EXP_SETUP_FD") != NULL) {
+                setenv("GALLIUM_DRIVER", "freedreno", 1);
+                setenv("MESA_LOADER_DRIVER_OVERRIDE", "kgsl", 1);
+                printf("Bridge: Use Freedreno renderer\n");
+                if(getenv("POJAV_ZINK_CRASH_HANDLE") == NULL) {
+                    pojav_environ->config_renderer = RENDERER_VK_ZINK;
+                    set_osm_bridge_tbl();
+                    printf("Bridge: Set osm bridge tbl\n");
+                } else {
+                    pojav_environ->config_renderer = RENDERER_VK_ZINK_PREF;
+                    loadSymbols();
+                    printf("Bridge: Use old bridge\n");
+                }
             }
         } else {
             load_vulkan();

@@ -24,7 +24,7 @@ void dlsym_OSMesa() {
     char* main_path = NULL;
     if(pojav_environ->config_renderer == RENDERER_VK_ZINK || pojav_environ->config_renderer == RENDERER_VK_ZINK_PREF) {
         if(getenv("POJAV_EXP_SETUP") != NULL) {
-            if(getenv("POJAV_EXP_SETUP_DEFAULT") != NULL) {
+            if(getenv("POJAV_EXP_SETUP_DEFAULT") != NULL || getenv("POJAV_EXP_SETUP_FD") != NULL) {
                 if(asprintf(&main_path, "%s/libOSMesa_8.so", getenv("POJAV_NATIVEDIR")) == -1) {
                     abort();
                 }

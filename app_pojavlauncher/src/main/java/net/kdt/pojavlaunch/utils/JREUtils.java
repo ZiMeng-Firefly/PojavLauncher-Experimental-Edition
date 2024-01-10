@@ -253,6 +253,11 @@ public class JREUtils {
                         envMap.put("MESA_DISK_CACHE_SINGLE_FILE", "1");
                         envMap.put("MESA_DISK_CACHE_SINGLE_FILE", "true");
                     }
+                    if(PREF_EXP_SETUP_FD){
+                        envMap.put("POJAV_EXP_SETUP_FD", "1");
+                        envMap.put("MESA_GL_VERSION_OVERRIDE", "4.6");
+                        envMap.put("MESA_GLSL_VERSION_OVERRIDE", "460");
+                    }
                 } else {
                     envMap.put("MESA_GL_VERSION_OVERRIDE", "4.6");
                     envMap.put("MESA_GLSL_VERSION_OVERRIDE", "460");
@@ -521,6 +526,9 @@ public class JREUtils {
                 }
                 if(PREF_EXP_SETUP_S){
                     renderLibrary = "libOSMesa.so";
+                }
+                if(PREF_EXP_SETUP_FD){
+                    renderLibrary = "libOSMesa_8.so";
                 }
             } else {
                 renderLibrary = "libOSMesa_8.so";
